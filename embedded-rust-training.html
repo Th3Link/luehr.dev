@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Embedded Rust Training | Remote & On-site | Marc-Hendric Lühr</title>
+    <meta name="description" content="Rust training for engineering teams: Rust Basics, Rust for Embedded Linux and Embedded Rust no_std on STM32, nRF52 or ESP32. Remote or on-site, in English or German, 5–10 participants, fixed price from €12,000 plus VAT." />
+    <link rel="canonical" href="https://luehr.dev/embedded-rust-training.html" />
+    <link rel="alternate" hreflang="de" href="https://luehr.dev/embedded-rust-schulung.html" />
+    <link rel="alternate" hreflang="en" href="https://luehr.dev/embedded-rust-training.html" />
+    <link rel="alternate" hreflang="x-default" href="https://luehr.dev/embedded-rust-training.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="luehr.dev" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="Embedded Rust Training | Remote &amp; On-site | Marc-Hendric Lühr" />
+    <meta property="og:description" content="Rust training for engineering teams: Rust Basics, Rust for Embedded Linux and Embedded Rust no_std on STM32, nRF52 or ESP32. Remote or on-site, in English or German, 5–10 participants, fixed price from €12,000 plus VAT." />
+    <meta property="og:url" content="https://luehr.dev/embedded-rust-training.html" />
+    <meta property="og:image" content="https://luehr.dev/avatar.jpg" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="icon" href="favicon.svg" sizes="any" type="image/svg+xml" />
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Course",
+                "@id": "https://luehr.dev/embedded-rust-training.html#basics",
+                "name": "Rust Basics",
+                "description": "Hands-on introduction to Rust for developers with basic programming experience, including testing, embedded cross compilation and CI/CD.",
+                "url": "https://luehr.dev/embedded-rust-training.html#basics",
+                "inLanguage": [
+                    "de",
+                    "en"
+                ],
+                "teaches": [
+                    "Ownership and borrowing",
+                    "Traits",
+                    "Error handling",
+                    "Unit and integration testing",
+                    "Embedded cross compilation",
+                    "CI/CD"
+                ],
+                "provider": {
+                    "@type": "Person",
+                    "name": "Marc-Hendric Lühr",
+                    "url": "https://luehr.dev/"
+                },
+                "offers": [
+                    {
+                        "@type": "Offer",
+                        "category": "Paid",
+                        "price": "12000",
+                        "priceCurrency": "EUR",
+                        "name": "Remote, 3–4 days"
+                    },
+                    {
+                        "@type": "Offer",
+                        "category": "Paid",
+                        "price": "15000",
+                        "priceCurrency": "EUR",
+                        "name": "On-site, 4 days"
+                    }
+                ],
+                "hasCourseInstance": [
+                    {
+                        "@type": "CourseInstance",
+                        "courseMode": "Online",
+                        "courseWorkload": "P3D",
+                        "instructor": {
+                            "@type": "Person",
+                            "name": "Marc-Hendric Lühr"
+                        }
+                    },
+                    {
+                        "@type": "CourseInstance",
+                        "courseMode": "Onsite",
+                        "courseWorkload": "P4D",
+                        "instructor": {
+                            "@type": "Person",
+                            "name": "Marc-Hendric Lühr"
+                        }
+                    }
+                ]
+            },
+            {
+                "@type": "Course",
+                "@id": "https://luehr.dev/embedded-rust-training.html#embedded-linux",
+                "name": "Rust Advanced: Embedded Linux",
+                "description": "Advanced Rust for Embedded Linux: async with tokio and smol, D-Bus, axum, synchronization, testing and CI/CD with audit, SBOM and Renovate.",
+                "url": "https://luehr.dev/embedded-rust-training.html#embedded-linux",
+                "inLanguage": [
+                    "de",
+                    "en"
+                ],
+                "teaches": [
+                    "Async Rust with tokio and smol",
+                    "D-Bus",
+                    "axum",
+                    "Synchronization",
+                    "SBOM",
+                    "Security"
+                ],
+                "provider": {
+                    "@type": "Person",
+                    "name": "Marc-Hendric Lühr",
+                    "url": "https://luehr.dev/"
+                },
+                "offers": [
+                    {
+                        "@type": "Offer",
+                        "category": "Paid",
+                        "price": "12000",
+                        "priceCurrency": "EUR",
+                        "name": "Remote, 3 days"
+                    },
+                    {
+                        "@type": "Offer",
+                        "category": "Paid",
+                        "price": "15000",
+                        "priceCurrency": "EUR",
+                        "name": "On-site, 4 days"
+                    }
+                ],
+                "hasCourseInstance": [
+                    {
+                        "@type": "CourseInstance",
+                        "courseMode": "Online",
+                        "courseWorkload": "P3D",
+                        "instructor": {
+                            "@type": "Person",
+                            "name": "Marc-Hendric Lühr"
+                        }
+                    },
+                    {
+                        "@type": "CourseInstance",
+                        "courseMode": "Onsite",
+                        "courseWorkload": "P4D",
+                        "instructor": {
+                            "@type": "Person",
+                            "name": "Marc-Hendric Lühr"
+                        }
+                    }
+                ]
+            },
+            {
+                "@type": "Course",
+                "@id": "https://luehr.dev/embedded-rust-training.html#no-std",
+                "name": "Rust Advanced: Embedded no_std",
+                "description": "Embedded Rust without the standard library on STM32, nRF52 or ESP32: Embassy, embedded traits (I2C, SPI, CAN), heapless, custom allocators, defmt and SWD/JTAG debugging.",
+                "url": "https://luehr.dev/embedded-rust-training.html#no-std",
+                "inLanguage": [
+                    "de",
+                    "en"
+                ],
+                "teaches": [
+                    "no_std",
+                    "Embassy",
+                    "embedded-hal",
+                    "heapless",
+                    "defmt",
+                    "SWD/JTAG debugging"
+                ],
+                "provider": {
+                    "@type": "Person",
+                    "name": "Marc-Hendric Lühr",
+                    "url": "https://luehr.dev/"
+                },
+                "offers": [
+                    {
+                        "@type": "Offer",
+                        "category": "Paid",
+                        "price": "15000",
+                        "priceCurrency": "EUR",
+                        "name": "On-site, 4 days"
+                    },
+                    {
+                        "@type": "Offer",
+                        "category": "Paid",
+                        "price": "12000",
+                        "priceCurrency": "EUR",
+                        "name": "Remote, 3 days"
+                    }
+                ],
+                "hasCourseInstance": [
+                    {
+                        "@type": "CourseInstance",
+                        "courseMode": "Onsite",
+                        "courseWorkload": "P4D",
+                        "instructor": {
+                            "@type": "Person",
+                            "name": "Marc-Hendric Lühr"
+                        }
+                    },
+                    {
+                        "@type": "CourseInstance",
+                        "courseMode": "Online",
+                        "courseWorkload": "P3D",
+                        "instructor": {
+                            "@type": "Person",
+                            "name": "Marc-Hendric Lühr"
+                        }
+                    }
+                ]
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "luehr.dev",
+                        "item": "https://luehr.dev/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Embedded Rust Training",
+                        "item": "https://luehr.dev/embedded-rust-training.html"
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+</head>
+
+<body>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle light/dark theme">
+        🌙
+    </button>
+
+    <main>
+    <section class="page even compact">
+        <div class="container">
+            <a href="/" class="back-link">← Back</a>
+            <span class="lang-switch"><a href="embedded-rust-schulung.html" hreflang="de" lang="de">Deutsche Version</a></span>
+
+            <h1>Embedded Rust Training for Engineering Teams</h1>
+            <p class="subtitle">Three hands-on Rust trainings: from getting started to Embedded Linux and microcontrollers without the standard library (no_std). Remote or on-site with your team, at a fixed price.</p>
+
+            <div class="grid colorful">
+                <a class="card" href="#basics">
+                    <h3>Rust Basics</h3>
+                    <p>Getting started with Rust: from toolchain and ownership to testing, cross compilation and CI/CD.</p>
+                    <span class="card-link">3–4 days · from €12,000 net →</span>
+                </a>
+                <a class="card" href="#embedded-linux">
+                    <h3>Rust Advanced: Embedded Linux</h3>
+                    <p>Async with tokio and smol, D-Bus, axum, dependency management and a secure supply chain.</p>
+                    <span class="card-link">3–4 days · from €12,000 net →</span>
+                </a>
+                <a class="card" href="#no-std">
+                    <h3>Rust Advanced: Embedded no_std</h3>
+                    <p>Rust on microcontrollers: Embassy, embedded-hal traits, heapless, defmt and debugging via SWD/JTAG.</p>
+                    <span class="card-link">4 days on-site · €15,000 net →</span>
+                </a>
+            </div>
+
+            <div class="lead">
+                <p>Topic and technology requests are <strong>no problem</strong> when agreed beforehand. Depending on your team's prior knowledge, some topics can be slimmed down or <strong>specific wishes covered in depth</strong>.</p>
+            </div>
+
+            <div class="cta-row">
+                <a class="btn" target="_blank" rel="noopener noreferrer" href="https://zeeg.me/marcluehr/getting-to-know">Book a free intro call</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="basics" class="page odd compact">
+        <div class="container">
+            <h2>Rust Basics</h2>
+            <p class="subtitle">A hands-on introduction to Rust for developers who already know a programming language a little. C is ideal, C++ works too, and we can also work well coming from Go or Python.</p>
+
+            <div class="card facts-card">
+                <dl class="facts">
+                        <dt>Remote</dt>
+                        <dd>3–4 days · €12,000 plus VAT</dd>
+                        <dt>On-site</dt>
+                        <dd>4 days, Tuesday to Friday noon · €15,000 plus VAT, travel included</dd>
+                        <dt>Participants</dt>
+                        <dd>5–10</dd>
+                        <dt>Language</dt>
+                        <dd>English or German</dd>
+                        <dt>Prerequisites</dt>
+                        <dd>Basic knowledge of any programming language (ideally C)</dd>
+                </dl>
+            </div>
+
+            <h3 class="topics-title">Topics</h3>
+            <div class="tags topics">
+                    <span>Toolchain</span>
+                    <span>Types</span>
+                    <span>Functions</span>
+                    <span>Structs</span>
+                    <span>Naming conventions</span>
+                    <span>Ownership &amp; borrowing</span>
+                    <span>Conditions &amp; loops</span>
+                    <span>Enums (also with different member types)</span>
+                    <span>match in many flavours</span>
+                    <span>Error handling</span>
+                    <span>Optional values</span>
+                    <span>Code base structure</span>
+                    <span>Visibility</span>
+                    <span>Traits: derive, manual, your own</span>
+                    <span>Unit &amp; integration tests</span>
+                    <span>Embedded cross compilation</span>
+                    <span>Logging</span>
+                    <span>Collections</span>
+                    <span>Debugging</span>
+                    <span>CI/CD basics: build, test, release</span>
+            </div>
+
+            <div class="lead">
+                <p><strong>No learning from an ivory tower:</strong> we try things out with lots of coding and learn from them. Together we implement a small, coherent game. First comes the problem, then the solution, so the game keeps getting better with every topic. You work alone, in small teams or all together.</p>
+            </div>
+            <div class="lead">
+                <p>Alternatively, by arrangement, we build <strong>a first productive program from your domain</strong> during the training.</p>
+            </div>
+            <div class="cta-row">
+                <a class="btn" target="_blank" rel="noopener noreferrer" href="https://zeeg.me/marcluehr/getting-to-know">Book a free intro call</a>
+            </div>
+        </div>
+    </section>
+    <section id="embedded-linux" class="page even compact">
+        <div class="container">
+            <h2>Rust Advanced: Embedded Linux</h2>
+            <p class="subtitle">Rust for applications and services on Embedded Linux devices: concurrent, well tested and with a secured build and release pipeline.</p>
+
+            <div class="card facts-card">
+                <dl class="facts">
+                        <dt>Remote</dt>
+                        <dd>3 days · €12,000 plus VAT</dd>
+                        <dt>On-site</dt>
+                        <dd>4 days, Tuesday to Friday noon · €15,000 plus VAT, travel included</dd>
+                        <dt>Participants</dt>
+                        <dd>5–10</dd>
+                        <dt>Language</dt>
+                        <dd>English or German</dd>
+                </dl>
+            </div>
+
+            <h3 class="topics-title">Topics</h3>
+            <div class="tags topics">
+                    <span>Iterators &amp; declarative collection processing</span>
+                    <span>Cargo features</span>
+                    <span>Async with smol and tokio</span>
+                    <span>Crate &amp; dependency management</span>
+                    <span>Synchronization</span>
+                    <span>D-Bus</span>
+                    <span>Web server with axum</span>
+                    <span>Testing async code, especially tokio</span>
+                    <span>Advanced CI/CD: audit, SBOM, Renovate</span>
+                    <span>Security</span>
+            </div>
+
+            <div class="lead">
+                <p>Same approach here: <strong>lots of coding, little theory</strong>. The game from Rust Basics continues and grows step by step with the new topics.</p>
+            </div>
+            <div class="cta-row">
+                <a class="btn" target="_blank" rel="noopener noreferrer" href="https://zeeg.me/marcluehr/getting-to-know">Book a free intro call</a>
+            </div>
+        </div>
+    </section>
+    <section id="no-std" class="page odd compact">
+        <div class="container">
+            <h2>Rust Advanced: Embedded no_std</h2>
+            <p class="subtitle">Rust directly on the microcontroller, without the standard library. We work with exactly one platform: STM32, nRF52 or ESP32. Your own custom hardware can be covered as well.</p>
+
+            <div class="card facts-card">
+                <dl class="facts">
+                        <dt>On-site</dt>
+                        <dd>4 days, Tuesday to Friday noon · €15,000 plus VAT, travel included</dd>
+                        <dt>Remote</dt>
+                        <dd>in exceptional cases: 3 days · €12,000 plus VAT</dd>
+                        <dt>Participants</dt>
+                        <dd>5–10</dd>
+                        <dt>Language</dt>
+                        <dd>English or German</dd>
+                        <dt>Hardware</dt>
+                        <dd>STM32, nRF52 or ESP32 (one platform per training) or your custom hardware</dd>
+                </dl>
+            </div>
+
+            <h3 class="topics-title">Topics</h3>
+            <div class="tags topics">
+                    <span>Hardware setup</span>
+                    <span>no_std vs. std</span>
+                    <span>Cargo features</span>
+                    <span>Async with Embassy</span>
+                    <span>Embedded traits: I²C, SPI, CAN, …</span>
+                    <span>Memory constraints</span>
+                    <span>heapless</span>
+                    <span>Custom allocator</span>
+                    <span>Logging &amp; debugging: defmt, SWD, JTAG</span>
+                    <span>Iterators</span>
+                    <span>Useful traits</span>
+                    <span>Security</span>
+            </div>
+
+            <div class="lead">
+                <p>Same approach here: <strong>lots of coding, little theory</strong>. The game from Rust Basics continues and grows step by step with the new topics.</p>
+            </div>
+            <div class="cta-row">
+                <a class="btn" target="_blank" rel="noopener noreferrer" href="https://zeeg.me/marcluehr/getting-to-know">Book a free intro call</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="page even compact">
+        <div class="container">
+            <h2>Remote or on-site</h2>
+            <div class="lead">
+                <p>Trainings take place <strong>remotely</strong> or <strong>on-site</strong> with your development team. I regularly travel throughout Northern and Central Germany and am happy to discuss other locations. Dates are arranged individually.</p>
+            </div>
+            <h2>Training by an embedded engineer</h2>
+            <div class="lead">
+                <p>
+                    I work as an embedded engineer on Embedded Linux, firmware architecture, testing and Rust, and teach
+                    Rust from the perspective of real product development.
+                </p>
+                <p>
+                    That includes my own open source work such as a
+                    <a href="https://github.com/Th3Link/ipv6-router-advertisement"><strong>Rust crate for IPv6 Router Advertisement</strong></a>
+                    and an <a href="https://github.com/Th3Link/homeautomation"><strong>open home automation platform</strong></a>
+                    built from custom hardware and software. More on the <a href="/"><strong>home page</strong></a>.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="page odd compact">
+        <div class="container">
+            <h2>Frequently asked questions</h2>
+            <div class="faq">
+                <details>
+                    <summary>What prior knowledge do we need for Rust Basics?</summary>
+                    <p>Basic knowledge of any programming language. C is ideal, C++ works too, and we can also work well coming from Go or Python.</p>
+                </details>
+                <details>
+                    <summary>How much does a training cost?</summary>
+                    <p>Each training has a fixed price for a team of 5–10 participants: €12,000 remote, €15,000 on-site (4 days, Tuesday to Friday noon, travel costs included), each plus VAT.</p>
+                </details>
+                <details>
+                    <summary>In which language are the trainings held?</summary>
+                    <p>In English or German, whichever suits your team.</p>
+                </details>
+                <details>
+                    <summary>Can the content be adapted to our team?</summary>
+                    <p>Yes. Topic and technology requests are no problem when agreed beforehand. Depending on prior knowledge, some topics are slimmed down or specific wishes covered in depth.</p>
+                </details>
+                <details>
+                    <summary>Which hardware is used in the no_std training?</summary>
+                    <p>STM32, nRF52 or ESP32, with one platform chosen per training. Your custom hardware can be covered as well.</p>
+                </details>
+                <details>
+                    <summary>Can we work on our own project during the training?</summary>
+                    <p>In Rust Basics, by arrangement, we can build a first productive program from your domain instead of the exercise game.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <section class="page even compact contact-section">
+        <div class="container">
+            <h1 class="blue">Let's get to know each other</h1>
+            <p class="subtitle">In a free, no-obligation intro call we figure out which training fits your team and which focus makes sense.</p>
+            <div class="contact-actions">
+                <a target="_blank" rel="noopener noreferrer" href="https://zeeg.me/marcluehr/getting-to-know" class="card purple">
+                    <h3>Book an intro call</h3>
+                    <p>Free and without obligation</p>
+                </a>
+                <a href="mailto:marc@luehr.dev?subject=Rust%20training%20inquiry" class="card green">
+                    <h3>E-Mail</h3>
+                    <p>marc@luehr.dev</p>
+                </a>
+                <a href="https://linkedin.com/in/marcluehr" class="card blue">
+                    <h3>LinkedIn</h3>
+                    <p>Connect or send a message</p>
+                </a>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="hero">
+                <div class="hero-content">
+                    <div class="hero-image">
+                        <img src="avatar.jpg" alt="" />
+                    </div>
+                    <div class="hero-text">
+                        <h2>Marc-Hendric Lühr</h2>
+                        <p><a href="mailto:marc@luehr.dev">marc@luehr.dev</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-columns">
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="/imprint.html">Imprint</a></li>
+                        <li><a href="/privacy.html">Privacy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="embedded-rust-training.html" hreflang="en" lang="en">Embedded Rust Training</a></li>
+                        <li><a href="embedded-rust-schulung.html" hreflang="de" lang="de">Embedded Rust Schulung</a></li>
+                        <li><a href="https://github.com/Th3Link">GitHub</a></li>
+                        <li><a href="https://blog.luehr.dev">Blog</a></li>
+                        <li><a href="https://linkedin.com/in/marcluehr">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <h3>Remote across Europe · On-site in Northern and Central Germany</h3>
+        <div class="footer-bottom">
+            <p>© 2026 Marc-Hendric Lühr</p>
+        </div>
+    </footer>
+
+    <script src="theme.js"></script>
+</body>
+
+</html>

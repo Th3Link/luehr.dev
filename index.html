@@ -1,25 +1,52 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <title>Marc-Hendric Lühr – Embedded Linux, Firmware Architecture & Embedded Rust Training</title>
+    <meta name="description"
+        content="Independent embedded coach and consultant: Embedded Linux, Yocto, firmware architecture, quality & security, and Embedded Rust training for engineering teams. Remote across Europe, on-site in Germany." />
+    <link rel="canonical" href="https://luehr.dev/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="luehr.dev" />
+    <meta property="og:title" content="Marc-Hendric Lühr – Embedded Linux, Firmware & Embedded Rust Training" />
+    <meta property="og:description"
+        content="Helping teams build reliable embedded systems, adopt Rust and grow engineering expertise. Remote across Europe, on-site in Germany." />
+    <meta property="og:url" content="https://luehr.dev/" />
+    <meta property="og:image" content="https://luehr.dev/avatar.jpg" />
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <title>Embedded Coach & Consultant (Marc)</title>
     <link rel="icon" href="favicon.svg" sizes="any" type="image/svg+xml" />
-    <a rel="me" href="https://mastodon.social/@Th3Link" style="visibility: hidden;">Mastodon</a>
+    <link rel="me" href="https://mastodon.social/@Th3Link" />
+    <script defer src="https://unpkg.com/lucide@1.52.0/dist/umd/lucide.min.js"></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Marc-Hendric Lühr",
+        "url": "https://luehr.dev/",
+        "image": "https://luehr.dev/avatar.jpg",
+        "jobTitle": "Embedded Coach & Consultant",
+        "description": "Embedded Linux, firmware architecture, quality & security and Embedded Rust training for engineering teams.",
+        "knowsAbout": ["Embedded Rust", "Embedded Linux", "Yocto", "Firmware architecture", "Cortex-M", "STM32", "nRF52", "Test automation", "Secure boot"],
+        "sameAs": [
+            "https://github.com/Th3Link",
+            "https://linkedin.com/in/marcluehr",
+            "https://mastodon.social/@Th3Link"
+        ]
+    }
+    </script>
 </head>
 
 <body>
-    <button id="theme-toggle" class="theme-toggle">
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle light/dark theme">
         🌙
     </button>
     <section class="page even">
         <div class="hero">
             <div class="hero-content">
                 <div class="hero-image hero-hover">
-                    <img src="avatar.jpg" alt="Avatar" />
+                    <img src="avatar.jpg" alt="Portrait of Marc-Hendric Lühr" />
                 </div>
 
                 <div class="hero-text">
@@ -33,7 +60,7 @@
                 <p>Technology choices come and go. Sound <strong>engineering practices</strong>, maintainable
                     architectures and capable
                     teams
-                    remain valuable for years.</br>
+                    remain valuable for years.<br />
                     I work alongside engineering teams to solve real-world problems, <strong>transfer
                         knowledge</strong> and build solutions
                     that
@@ -47,12 +74,12 @@
         <h2>Helping teams build reliable embedded systems,
             adopt modern technologies and grow engineering expertise.</h2>
         <div class="contact">
-            <a href="mailto:marc@luehr.dev" class="contact-btn blue">
+            <a href="mailto:marc@luehr.dev" class="contact-btn blue" aria-label="Email">
                 <i data-lucide="mail"></i>
             </a>
 
-            <a href="https://github.com/th3link" class="contact-btn blue">
-                <svg viewBox="0 0 24 24" width="20" height="20">
+            <a href="https://github.com/th3link" class="contact-btn blue" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
                     <path class="outer" d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577
                         0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61 -.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.082-.729.082-.729
                         1.205.085 1.84 1.236 1.84 1.236 1.07 1.835 2.809 1.304 3.495.997.108-.776.418-1.305.762-1.605-2.665-.3
@@ -64,9 +91,9 @@
                 </svg>
             </a>
 
-            <a href="https://linkedin.com/in/marcluehr" class="contact-btn blue">
+            <a href="https://linkedin.com/in/marcluehr" class="contact-btn blue" aria-label="LinkedIn">
 
-                <svg xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision"
+                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" shape-rendering="geometricPrecision"
                     text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd"
                     clip-rule="evenodd" viewBox="0 0 512 509.64">
                     <path class="outer"
@@ -93,8 +120,8 @@
                 </svg>
             </a-->
 
-            <a href="https://mastodon.social/@th3link" class="contact-btn blue">
-                <svg xmlns="http://www.w3.org/2000/svg" width="61.076954mm" height="65.47831mm" class="fg"
+            <a href="https://mastodon.social/@th3link" class="contact-btn blue" rel="me" aria-label="Mastodon">
+                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" width="61.076954mm" height="65.47831mm" class="fg"
                     viewBox="0 0 216.4144 232.00976">
                     <path class="outer"
                         d="M211.80734 139.0875c-3.18125 16.36625-28.4925 34.2775-57.5625 37.74875-15.15875 1.80875-30.08375 3.47125-45.99875 2.74125-26.0275-1.1925-46.565-6.2125-46.565-6.2125 0 2.53375.15625 4.94625.46875 7.2025 3.38375 25.68625 25.47 27.225 46.39125 27.9425 21.11625.7225 39.91875-5.20625 39.91875-5.20625l.8675 19.09s-14.77 7.93125-41.08125 9.39c-14.50875.7975-32.52375-.365-53.50625-5.91875C9.23234 213.82 1.40609 165.31125.20859 116.09125c-.365-14.61375-.14-28.39375-.14-39.91875 0-50.33 32.97625-65.0825 32.97625-65.0825C49.67234 3.45375 78.20359.2425 107.86484 0h.72875c29.66125.2425 58.21125 3.45375 74.8375 11.09 0 0 32.975 14.7525 32.975 65.0825 0 0 .41375 37.13375-4.59875 62.915" />
@@ -154,7 +181,6 @@
                         <li>Technology transitions</li>
                         <li>Temporary engineering support</li>
                     </ul>
-                    </p>
                 </div>
 
             </div>
@@ -216,7 +242,7 @@
                 <div class="card purple swap">
                     <div class="header">
                         <div class="icon">
-                            <i data-lucide="book"></i>
+                            <i data-lucide="server"></i>
                         </div>
                         <h3>Embedded Linux & Yocto</h3>
                     </div>
@@ -229,26 +255,27 @@
                     </ul>
                 </div>
 
-                <div class="card purple swap">
+                <a class="card purple swap" href="embedded-rust-training.html">
                     <div class="header">
                         <div class="icon">
-                            <i data-lucide="book"></i>
+                            <i data-lucide="cpu"></i>
                         </div>
-                        <h3>Rust Adoption</h3>
+                        <h3>Embedded Rust Training & Adoption</h3>
                     </div>
                     <p>Introduce Rust successfully into embedded teams.</p>
                     <ul>
-                        <li>Workshops & Courses</li>
-                        <li>Mentoring</li>
-                        <li>Code Reviews</li>
+                        <li>Embedded Rust Training (remote or on-site)</li>
+                        <li>Inhouse Workshops</li>
+                        <li>Mentoring & Code Reviews</li>
                         <li>Migration Strategies</li>
                     </ul>
-                </div>
+                    <span class="card-link">Embedded Rust training details →</span>
+                </a>
 
                 <div class="card purple swap">
                     <div class="header">
                         <div class="icon">
-                            <i data-lucide="book"></i>
+                            <i data-lucide="shield-check"></i>
                         </div>
                         <h3>Quality & Security</h3>
                     </div>
@@ -317,8 +344,8 @@
         <div class="container">
             <a href="https://github.com/th3link">
                 <div class="card github-card blue">
-                    <img id="gh-stats" class="first" />
-                    <img id="gh-langs" class="second" />
+                    <img id="gh-stats" class="first" alt="GitHub statistics of Th3Link" loading="lazy" />
+                    <img id="gh-langs" class="second" alt="Most used languages on GitHub" loading="lazy" />
                 </div>
             </a>
         </div>
@@ -427,7 +454,7 @@
             <div class="hero">
                 <div class="hero-content">
                     <div class="hero-image">
-                        <img src="avatar.jpg" alt="Avatar" />
+                        <img src="avatar.jpg" alt="" />
                     </div>
 
                     <div class="hero-text">
@@ -450,6 +477,8 @@
                 <div>
                     <h4>Links</h4>
                     <ul>
+                        <li><a href="embedded-rust-training.html">Embedded Rust Training</a></li>
+                        <li><a href="embedded-rust-schulung.html" hreflang="de" lang="de">Embedded Rust Schulung</a></li>
                         <li><a href="https://github.com/Th3Link">GitHub</a></li>
                         <li><a href="https://blog.luehr.dev">Blog</a></li>
                         <li><a href="https://linkedin.com/in/marcluehr">Linkedin</a></li>
@@ -474,12 +503,12 @@
         <div class="footer-bottom">
             <p>© 2026 Marc-Hendric Lühr</p>
         </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => lucide.createIcons());
+    </script>
+    <script src="theme.js"></script>
 </body>
-
-<script>
-    lucide.createIcons();
-</script>
-
-<script src="theme.js"></script>
 
 </html>
