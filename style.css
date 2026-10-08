@@ -830,3 +830,7 @@ summary:focus-visible {
     font-weight: 700;
     margin-bottom: 16px;
 }
+
+.header > h3:only-child {
+    flex: 1;
+}
