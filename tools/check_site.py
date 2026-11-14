@@ -32,6 +32,8 @@ class Page(HTMLParser):
         if tag in ['a','link','img','script']:
             target=a.get('href') or a.get('src')
             if target: self.links.append(target)
+        if tag in ['source','img'] and a.get('srcset'):
+            self.links.extend(candidate.strip().split()[0] for candidate in a['srcset'].split(','))
         if tag=='script' and a.get('type')=='application/ld+json': self.in_schema=True; self.json=''
     def handle_data(self,data):
         if self.in_schema: self.json+=data

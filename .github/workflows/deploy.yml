@@ -27,6 +27,7 @@ jobs:
         run: |
           python3 tools/build_site.py
           python3 tools/check_site.py
+          python3 tools/check_performance.py
           node tools/check_preferences.cjs
 
       - name: Prepare site

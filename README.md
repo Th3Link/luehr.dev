@@ -113,3 +113,41 @@ Profile buttons now sit in the home-page header, above its divider line. Their v
 with 44 px click targets. The SWD/JTAG label sits to the right of its connector,
 clear of the wiring. Go is listed second after Rust in both language versions;
 Security & Integrity includes secure firmware / OTA updates.
+
+## Live performance audit and portrait delivery
+
+Baseline PageSpeed report (14 November 2026, Lighthouse 13.6.0):
+https://pagespeed.web.dev/analysis/https-luehr-dev-de/zavc00cas4
+
+| Single baseline lab run | Performance | LCP | CLS | TBT | Speed Index |
+| --- | --- | --- | --- | --- | --- |
+| Mobile, slow 4G / Moto G Power | 99 | 0.9 s | 0 | 0 ms | 3.6 s |
+| Desktop, custom throttling | 100 | 0.2 s | 0.006 | 0 ms | 0.4 s |
+
+No CrUX field data was available. TBT is a lab diagnostic and is not a measurement of INP.
+The image-delivery audit identified the full-size 256,131-byte portrait as oversized,
+with an estimated 245.9 KiB saving in the mobile run. Responsive WebP copies now cover
+192, 320, 480 and 720 pixel widths. Local browser checks selected the 192 px file for
+an 88 px mobile portrait and the 320 px file for a 240 px desktop portrait. Layout,
+content, crop and the original JPEG fallback/social image are preserved.
+
+| Portrait candidate | Bytes | Reduction from the original JPEG |
+| --- | --- | --- |
+| 192 px | 6,160 | 97.59% |
+| 320 px | 11,036 | 95.69% |
+| 480 px | 18,536 | 92.76% |
+| 720 px | 31,678 | 87.63% |
+
+These are deterministic file-size reductions, not claims of an equivalent reduction
+in page-load time. The before/after PageSpeed runs are descriptive live lab snapshots,
+not an alternating controlled benchmark or proof of a field-metric improvement.
+
+Run `python3 tools/check_performance.py` to validate both home pages, responsive
+sources, fallback, dimensions and the 40 KB per-candidate budget. It runs in CI.
+To regenerate the committed WebP assets, use `python3 tools/optimize_portrait.py` with
+Pillow installed locally. Production generation does not require Pillow.
+
+Other findings: the small baseline desktop layout shift was attributed to the heading
+font. The 10-minute asset cache policy and render-blocking resources are additional
+PageSpeed diagnostics. They are not changed in this focused image-delivery fix; the
+page already meets the lab LCP and CLS thresholds comfortably.
