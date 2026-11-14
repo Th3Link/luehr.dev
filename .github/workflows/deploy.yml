@@ -23,10 +23,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Generate and validate pages
+        run: |
+          python3 tools/build_site.py
+          python3 tools/check_site.py
+          node tools/check_preferences.cjs
+
       - name: Prepare site
         run: |
           mkdir _site
-          git ls-files -z | grep -zv '^\.github/' | xargs -0 cp --parents -t _site
+          cp ./*.html style.css theme.js robots.txt sitemap.xml avatar.jpg favicon.svg _site/
+          cp -R assets de _site/
           touch _site/.nojekyll
 
       - uses: actions/configure-pages@v5

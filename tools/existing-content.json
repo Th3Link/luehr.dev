@@ -1,0 +1,457 @@
+{
+  "topics": {
+    "en": {
+      "basics": [
+        "Toolchain",
+        "Types",
+        "Functions",
+        "Structs",
+        "Naming conventions",
+        "Ownership &amp; borrowing",
+        "Conditions &amp; loops",
+        "Enums (also with different member types)",
+        "match in many flavours",
+        "Error handling",
+        "Optional values",
+        "Code base structure",
+        "Visibility",
+        "Traits: derive, manual, your own",
+        "Unit &amp; integration tests",
+        "Embedded cross compilation",
+        "Logging",
+        "Collections",
+        "Debugging",
+        "CI/CD basics: build, test, release"
+      ],
+      "embedded-linux": [
+        "Iterators &amp; declarative collection processing",
+        "Cargo features",
+        "Async with smol and tokio",
+        "Crate &amp; dependency management",
+        "Synchronization",
+        "D-Bus",
+        "Web server with axum",
+        "Testing async code, especially tokio",
+        "Advanced CI/CD: audit, SBOM, Renovate",
+        "Security"
+      ],
+      "no-std": [
+        "Hardware setup",
+        "no_std vs. std",
+        "Cargo features",
+        "Async with Embassy",
+        "Embedded traits: I²C, SPI, CAN, …",
+        "Memory constraints",
+        "heapless",
+        "Custom allocator",
+        "Logging &amp; debugging: defmt, SWD, JTAG",
+        "Iterators",
+        "Useful traits",
+        "Security"
+      ]
+    },
+    "de": {
+      "basics": [
+        "Toolchain",
+        "Typen",
+        "Funktionen",
+        "Structs",
+        "Naming Conventions",
+        "Ownership &amp; Borrowing",
+        "Bedingungen &amp; Schleifen",
+        "Enums (auch mit unterschiedlichen Typen)",
+        "match in vielen Varianten",
+        "Fehlerbehandlung",
+        "Optionale Werte",
+        "Struktur der Codebasis",
+        "Sichtbarkeit",
+        "Traits: derive, manuell, eigene",
+        "Unit- &amp; Integrationstests",
+        "Embedded-Cross-Compilation",
+        "Logging",
+        "Collections",
+        "Debugging",
+        "CI/CD-Grundlagen: Build, Test, Release"
+      ],
+      "embedded-linux": [
+        "Iteratoren &amp; deklarative Collection-Verarbeitung",
+        "Cargo Features",
+        "Async mit smol und tokio",
+        "Crate- &amp; Dependency-Management",
+        "Synchronisation",
+        "D-Bus",
+        "Webserver mit axum",
+        "Testing mit async, insbesondere tokio",
+        "Advanced CI/CD: Audit, SBOM, Renovate",
+        "Security"
+      ],
+      "no-std": [
+        "Hardware-Setup",
+        "no_std vs. std",
+        "Cargo Features",
+        "Async mit Embassy",
+        "Embedded-Traits: I²C, SPI, CAN, …",
+        "Speicherbeschränkungen",
+        "heapless",
+        "Custom Allocator",
+        "Logging &amp; Debugging: defmt, SWD, JTAG",
+        "Iteratoren",
+        "Nützliche Traits",
+        "Security"
+      ]
+    }
+  },
+  "legal": {
+    "imprint": "\n\n            <p>\n                Information according to §5 TMG\n            </p>\n\n            <p>\n                Marc-Hendric Lühr<br>\n                Alte Dorfstr. 22A<br>\n                31832 Springe<br>\n                Germany\n            </p>\n\n            <p>\n                Email: marc@luehr.dev\n            </p>\n\n            <h3>Responsible for content according to §55 Abs. 2 RStV</h3>\n\n            <p>\n                Marc-Hendric Lühr<br>\n                Alte Dorfstr. 22A<br>\n                31832 Springe<br>\n            </p>\n\n            <h3>Liability for Content</h3>\n\n            <p>\n                The contents of this website have been created with great care.\n                However, I cannot guarantee the accuracy, completeness or timeliness of the content.\n            </p>\n\n            <h3>Liability for Links</h3>\n\n            <p>\n                This website contains links to external websites.\n                I have no influence on their contents and therefore cannot accept any liability for them.\n            </p>\n\n            <h3>Copyright</h3>\n\n            <p>\n                The content and works on this website are subject to copyright.\n                Duplication or distribution requires written consent.\n            </p>\n",
+    "privacy": "\n\n            <h3>General Information</h3>\n\n            <p>\n                This website can be used without actively providing personal data.\n                Personal data is only collected if you contact me directly via email.\n            </p>\n\n\n            <h3>Local Storage and Cookies</h3>\n\n            <p>\n                This website does not use cookies.\n            </p>\n\n            <p>\n                To remember your theme preference (light or dark mode), a small piece of information\n                is stored locally in your browser using the Local Storage API.\n                This data is not transmitted to the server and is used solely to improve user experience.\n            </p>\n\n            <h3>Server Log Files</h3>\n\n            <p>\n                The hosting provider automatically collects and stores information in server log files.\n                This may include:\n            </p>\n\n            <ul>\n                <li>Browser type and version</li>\n                <li>Operating system</li>\n                <li>Referrer URL</li>\n                <li>Time of request</li>\n                <li>IP address</li>\n            </ul>\n\n            <p>\n                This data is used solely to ensure the proper operation and security of the website. It is not combined\n                with any other data source.\n                Log data is automatically deleted after a maximum of 7 days.\n            </p>\n\n            <h3>Contact</h3>\n\n            <p>\n                If you contact me via email, your data will be stored for the purpose of processing your request.\n            </p>\n\n            <h3>GitHub Statistics</h3>\n\n            <p>\n                This website embeds external content from GitHub (github-readme-stats).\n                Your IP address may be transmitted to GitHub servers when loading this content.\n            </p>\n\n\n            <h3>External Resources</h3>\n\n            <p>\n                This website uses external resources (e.g. Lucide icons via unpkg CDN).\n                When loading these resources, your IP address may be transmitted to the respective provider.\n            </p>\n\n            <h3>Scheduling Appointments via Zeeg</h3>\n\n            <p>\n                To book an introductory call, this website links to the scheduling service Zeeg\n                (Zeeg GmbH, Friedrichstr. 155, 10117 Berlin, Germany). Simply visiting this website does not\n                transmit any data to Zeeg. Only when you follow the link are you taken to Zeeg's website.\n            </p>\n\n            <p>\n                If you book an appointment there, the data you enter (e.g. name, email address, chosen date and\n                optional message) is processed by Zeeg and transmitted to me so that I can prepare and hold the\n                appointment. The legal basis is Art. 6(1)(b) GDPR (steps prior to entering into a contract).\n            </p>\n\n            <p>\n                More information can be found in Zeeg's privacy policy:\n                <a href=\"https://zeeg.me/en/legal/privacy\">https://zeeg.me/en/legal/privacy</a>\n            </p>\n\n            <h3>Liability Insurance Seal of exali AG</h3>\n\n            <p>\n                <strong>Description and scope of data processing:</strong>\n                This website embeds the liability insurance seal of exali AG. The graphic element of the seal is\n                loaded from the servers of exali AG. Due to the technical design of the internet, your IP address is\n                processed in order to transmit the graphic to your browser.\n            </p>\n\n            <p>\n                If you click on the seal, you leave this website and are redirected to the servers of exali AG.\n            </p>\n\n            <p>\n                More information can be found in exali's privacy policy:\n                <a href=\"https://www.exali.de/Ueber-exali/Rechtliches/Datenschutzerklaerung,100401.php#Verwendung/Einbindung%20des%20exali.de-Haftpflicht-Siegels\">exali.de privacy policy</a>\n            </p>\n\n            <p>\n                <strong>Legal basis:</strong>\n                The legal basis for the data processing is Art. 6(1)(f) GDPR (legitimate interest).\n            </p>\n\n            <p>\n                <strong>Purpose:</strong>\n                The data processing serves to provide the legally required information on professional liability\n                insurance pursuant to § 2(11) DL-InfoV in a visually appealing way.\n            </p>\n\n            <p>\n                <strong>Legitimate interest:</strong>\n                My legitimate interest results from the purpose of offering an appealing website and fulfilling my\n                information obligations in a visually appealing manner.\n            </p>\n\n            <h3>Your Rights</h3>\n\n            <p>\n                You have the right to request information about your stored personal data,\n                as well as correction or deletion of such data.\n            </p>\n"
+  },
+  "services": [
+    {
+      "title": {
+        "de": "Embedded Linux & Yocto",
+        "en": "Embedded Linux & Yocto"
+      },
+      "description": {
+        "de": "Robuste Linux-Geräte entwickeln und langfristig betreuen.",
+        "en": "Build and maintain robust Linux-based devices."
+      },
+      "items": {
+        "de": [
+          "Yocto",
+          "BSP-Integration",
+          "Systemarchitektur",
+          "Langfristige Wartung"
+        ],
+        "en": [
+          "Yocto",
+          "BSP Integration",
+          "System Architecture",
+          "Long-Term Maintenance"
+        ]
+      }
+    },
+    {
+      "title": {
+        "de": "Embedded Rust Training & Einführung",
+        "en": "Embedded Rust Training & Adoption"
+      },
+      "description": {
+        "de": "Rust in Embedded-Teams einführen und die nötige Erfahrung im Team aufbauen.",
+        "en": "Introduce Rust successfully into embedded teams."
+      },
+      "items": {
+        "de": [
+          "Embedded-Rust-Training, remote oder vor Ort",
+          "Inhouse-Workshops",
+          "Mentoring & Code Reviews",
+          "Migrationsstrategien"
+        ],
+        "en": [
+          "Embedded Rust Training (remote or on-site)",
+          "Inhouse Workshops",
+          "Mentoring & Code Reviews",
+          "Migration Strategies"
+        ]
+      }
+    },
+    {
+      "title": {
+        "de": "Qualität & Security",
+        "en": "Quality & Security"
+      },
+      "description": {
+        "de": "Zuverlässigkeit, Wartbarkeit und Sicherheit über den gesamten Produktlebenszyklus verbessern.",
+        "en": "Improve reliability, maintainability and security throughout the product lifecycle."
+      },
+      "items": {
+        "de": [
+          "Testautomatisierung",
+          "Secure Boot",
+          "Signierte Softwareupdates",
+          "SBOM-Erstellung",
+          "CVE-Monitoring",
+          "Härtung von Embedded-Systemen"
+        ],
+        "en": [
+          "Test Automation",
+          "Secure Boot",
+          "Signed Software Updates",
+          "SBOM Generation",
+          "CVE Monitoring",
+          "Embedded System Hardening"
+        ]
+      }
+    },
+    {
+      "title": {
+        "de": "Coaching",
+        "en": "Coaching"
+      },
+      "description": {
+        "de": "Teams beim Aufbau von Wissen und Selbstständigkeit in der modernen Embedded-Entwicklung unterstützen.",
+        "en": "Help your team build expertise and confidence in modern embedded development."
+      },
+      "items": {
+        "de": [
+          "Workshops",
+          "Team-Mentoring",
+          "Code Reviews",
+          "Pair Programming"
+        ],
+        "en": [
+          "Workshops",
+          "Team Mentoring",
+          "Code Reviews",
+          "Pair Programming"
+        ]
+      }
+    },
+    {
+      "title": {
+        "de": "Consulting",
+        "en": "Consulting"
+      },
+      "description": {
+        "de": "Technische Unterstützung bei Architekturentscheidungen, der Einführung von Technologien und anspruchsvollen Engineering-Fragen.",
+        "en": "Technical guidance for architecture decisions, technology adoption and complex engineering challenges."
+      },
+      "items": {
+        "de": [
+          "Architekturreviews",
+          "Technische Strategie",
+          "Technologiebewertung",
+          "Projektbegleitung"
+        ],
+        "en": [
+          "Architecture Reviews",
+          "Technical Strategy",
+          "Technology Evaluation",
+          "Project Guidance"
+        ]
+      }
+    },
+    {
+      "title": {
+        "de": "Implementierung",
+        "en": "Implementation"
+      },
+      "description": {
+        "de": "Ausgewählte Entwicklungsarbeit für Prototypen, kritische Komponenten und anspruchsvolle Engineering-Aufgaben.",
+        "en": "Selective hands-on implementation for prototypes, critical components and challenging engineering tasks."
+      },
+      "items": {
+        "de": [
+          "Architekturüberarbeitung",
+          "Machbarkeitsnachweise",
+          "Technologieumstellungen",
+          "Zeitweise Engineering-Unterstützung"
+        ],
+        "en": [
+          "Architecture redesigns",
+          "Proof of Concepts",
+          "Technology transitions",
+          "Temporary engineering support"
+        ]
+      }
+    }
+  ],
+  "expertise": [
+    {
+      "title": {
+        "de": "Embedded-Systeme & Architektur",
+        "en": "Embedded Systems & Architecture"
+      },
+      "description": {
+        "de": "",
+        "en": ""
+      },
+      "items": {
+        "de": [
+          "Embedded Linux",
+          "Yocto",
+          "Systemarchitektur",
+          "Hardwareintegration",
+          "Prototyping",
+          "Konzeptentwicklung",
+          "systemd",
+          "D-Bus"
+        ],
+        "en": [
+          "Embedded Linux",
+          "Yocto",
+          "System Architecture",
+          "Hardware integration",
+          "Prototyping",
+          "Concept development",
+          "systemd",
+          "D-Bus"
+        ]
+      }
+    },
+    {
+      "title": {
+        "de": "Programmiersprachen",
+        "en": "Languages"
+      },
+      "description": {
+        "de": "",
+        "en": ""
+      },
+      "items": {
+        "de": [
+          "Rust (bevorzugt)",
+          "Go",
+          "C",
+          "C++",
+          "Python"
+        ],
+        "en": [
+          "Rust (preferred)",
+          "Go",
+          "C",
+          "C++",
+          "Python"
+        ]
+      }
+    },
+    {
+      "title": {
+        "de": "Hardwareverständnis",
+        "en": "Hardware Understanding"
+      },
+      "description": {
+        "de": "",
+        "en": ""
+      },
+      "items": {
+        "de": [
+          "Schaltpläne lesen",
+          "Verständnis auf Board-Ebene",
+          "Signalschnittstellen",
+          "Hardware-Inbetriebnahme"
+        ],
+        "en": [
+          "Schematic reading",
+          "Board-level understanding",
+          "Signal interfaces",
+          "Hardware bring-up"
+        ]
+      }
+    },
+    {
+      "title": {
+        "de": "Netzwerktechnik",
+        "en": "Networking"
+      },
+      "description": {
+        "de": "",
+        "en": ""
+      },
+      "items": {
+        "de": [
+          "Linux-Netzwerktechnik",
+          "TCP/IP",
+          "IPv6",
+          "MQTT",
+          "TLS/SSL"
+        ],
+        "en": [
+          "Linux Networking",
+          "TCP/IP",
+          "IPv6",
+          "MQTT",
+          "TLS/SSL"
+        ]
+      }
+    },
+    {
+      "title": {
+        "de": "Schnittstellen & Protokolle",
+        "en": "Interfaces & Protocols"
+      },
+      "description": {
+        "de": "",
+        "en": ""
+      },
+      "items": {
+        "de": [
+          "CAN",
+          "USB",
+          "RS485",
+          "Modbus",
+          "SPI",
+          "I²C",
+          "I²S/TDM",
+          "UART"
+        ],
+        "en": [
+          "CAN",
+          "USB",
+          "RS485",
+          "Modbus",
+          "SPI",
+          "I²C",
+          "I²S/TDM",
+          "UART"
+        ]
+      }
+    },
+    {
+      "title": {
+        "de": "Security & Integrität",
+        "en": "Security & Integrity"
+      },
+      "description": {
+        "de": "",
+        "en": ""
+      },
+      "items": {
+        "de": [
+          "Secure Boot",
+          "Sichere Firmware-/OTA-Updates",
+          "SBOM",
+          "CVE-Prüfung",
+          "Firmwareintegrität"
+        ],
+        "en": [
+          "Secure Boot",
+          "Secure firmware / OTA updates",
+          "SBOM",
+          "CVE Checking",
+          "Firmware Integrity"
+        ]
+      }
+    },
+    {
+      "title": {
+        "de": "Tests & Qualität",
+        "en": "Testing & Quality"
+      },
+      "description": {
+        "de": "",
+        "en": ""
+      },
+      "items": {
+        "de": [
+          "Testautomatisierung",
+          "CI/CD",
+          "Reproduzierbare Builds",
+          "Hardware-in-the-Loop",
+          "Testumgebungen",
+          "Integrationstests",
+          "Fehleranalyse"
+        ],
+        "en": [
+          "Test Automation",
+          "CI/CD",
+          "Reproducible builds",
+          "Hardware-in-the-Loop",
+          "Test Environments",
+          "Integration Tests",
+          "Failure analysis"
+        ]
+      }
+    }
+  ],
+  "social_links": "<a href=\"mailto:marc@luehr.dev\" class=\"social-link\" aria-label=\"Email\">\n                <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><rect x=\"3\" y=\"5\" width=\"18\" height=\"14\" rx=\"2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\"/><path d=\"m3 6 9 7 9-7\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\"/></svg>\n            </a>\n\n            <a href=\"https://github.com/th3link\" class=\"social-link\" aria-label=\"GitHub\">\n                <svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" aria-hidden=\"true\" focusable=\"false\">\n                    <path class=\"outer\" d=\"M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577\n                        0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61 -.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.082-.729.082-.729\n                        1.205.085 1.84 1.236 1.84 1.236 1.07 1.835 2.809 1.304 3.495.997.108-.776.418-1.305.762-1.605-2.665-.3\n                        -5.467-1.334-5.467-5.93 0-1.31.47-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 \n                        0 0 1.005-.322 3.3 1.23a11.52 11.52 0 013.003-.404 c1.02.005 2.045.138 3.003.404 2.28-1.552 \n                        3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 \n                        0 4.61-2.805 5.625-5.475 5.92.435.375.81 1.102.81 2.222 0 1.606-.015 2.896-.015 3.286 \n                        0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z\" />\n                </svg>\n            </a>\n\n            <a href=\"https://linkedin.com/in/marcluehr\" class=\"social-link\" aria-label=\"LinkedIn\">\n\n                <svg xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\" focusable=\"false\" shape-rendering=\"geometricPrecision\"\n                    text-rendering=\"geometricPrecision\" image-rendering=\"optimizeQuality\" fill-rule=\"evenodd\"\n                    clip-rule=\"evenodd\" viewBox=\"0 0 512 509.64\">\n                    <path class=\"outer\"\n                        d=\"M204.97 197.54h64.69v33.16h.94c9.01-16.16 31.04-33.16 63.89-33.16 68.31 0 80.94 42.51 80.94 97.81v116.92h-67.46l-.01-104.13c0-23.81-.49-54.45-35.08-54.45-35.12 0-40.51 25.91-40.51 52.72v105.86h-67.4V197.54zm-38.23-65.09c0 19.36-15.72 35.08-35.08 35.08-19.37 0-35.09-15.72-35.09-35.08 0-19.37 15.72-35.08 35.09-35.08 19.36 0 35.08 15.71 35.08 35.08zm-70.17 65.09h70.17v214.73H96.57V197.54z\" />\n                </svg>\n            </a>\n\n            \n\n            <a href=\"https://mastodon.social/@th3link\" class=\"social-link\" rel=\"me\" aria-label=\"Mastodon\">\n                <svg xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\" focusable=\"false\" width=\"61.076954mm\" height=\"65.47831mm\" class=\"fg\"\n                    viewBox=\"0 0 216.4144 232.00976\">\n                    <path class=\"outer\"\n                        d=\"M211.80734 139.0875c-3.18125 16.36625-28.4925 34.2775-57.5625 37.74875-15.15875 1.80875-30.08375 3.47125-45.99875 2.74125-26.0275-1.1925-46.565-6.2125-46.565-6.2125 0 2.53375.15625 4.94625.46875 7.2025 3.38375 25.68625 25.47 27.225 46.39125 27.9425 21.11625.7225 39.91875-5.20625 39.91875-5.20625l.8675 19.09s-14.77 7.93125-41.08125 9.39c-14.50875.7975-32.52375-.365-53.50625-5.91875C9.23234 213.82 1.40609 165.31125.20859 116.09125c-.365-14.61375-.14-28.39375-.14-39.91875 0-50.33 32.97625-65.0825 32.97625-65.0825C49.67234 3.45375 78.20359.2425 107.86484 0h.72875c29.66125.2425 58.21125 3.45375 74.8375 11.09 0 0 32.975 14.7525 32.975 65.0825 0 0 .41375 37.13375-4.59875 62.915\" />\n                    <path class=\"inner\"\n                        d=\"M177.50984 80.077v60.94125h-24.14375v-59.15c0-12.46875-5.24625-18.7975-15.74-18.7975-11.6025 0-17.4175 7.5075-17.4175 22.3525v32.37625H96.20734V85.42325c0-14.845-5.81625-22.3525-17.41875-22.3525-10.49375 0-15.74 6.32875-15.74 18.7975v59.15H38.90484V80.077c0-12.455 3.17125-22.3525 9.54125-29.675 6.56875-7.3225 15.17125-11.07625 25.85-11.07625 12.355 0 21.71125 4.74875 27.8975 14.2475l6.01375 10.08125 6.015-10.08125c6.185-9.49875 15.54125-14.2475 27.8975-14.2475 10.6775 0 19.28 3.75375 25.85 11.07625 6.36875 7.3225 9.54 17.22 9.54 29.675\" />\n                </svg>\n            </a>\n\n            <a href=\"https://www.freelancermap.de/profil/software-development-engineer-embedded-systems-software-architect-embedded-linux-und-modern-c\" class=\"social-link\" aria-label=\"freelancermap\">\n                <svg xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\" focusable=\"false\" viewBox=\"77 76 280 280\">\n                    <g transform=\"translate(0,425) scale(0.1,-0.1)\">\n                        <path class=\"outer\" d=\"M1905 3319 c-314 -48 -445 -243 -445 -661 l0 -198 -85 0 -84 0 -47\n-147 c-26 -82 -49 -153 -51 -160 -4 -9 29 -13 129 -15 l133 -3 3 -652 2 -653\n180 0 180 0 0 655 0 655 159 0 159 0 51 153 c28 83 51 155 51 160 0 4 -94 7\n-210 7 l-210 0 0 168 c0 367 116 440 441 276 l108 -53 50 152 c28 84 51 156\n51 160 0 14 -221 114 -298 136 -90 25 -189 32 -267 20z M2312 2008 c-210 -634\n-382 -1156 -382 -1161 0 -4 86 -6 191 -5 l191 3 199 600 c109 330 282 851 383\n1158 l184 557 -192 0 -192 0 -382 -1152z\" />\n                    </g>\n                </svg>\n            </a>"
+}

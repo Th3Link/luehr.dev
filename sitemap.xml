@@ -1,27 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url>
-    <loc>https://luehr.dev/</loc>
-    <lastmod>2026-10-07</lastmod>
-  </url>
-  <url>
-    <loc>https://luehr.dev/embedded-rust-training.html</loc>
-    <lastmod>2026-10-07</lastmod>
-    <xhtml:link rel="alternate" hreflang="de" href="https://luehr.dev/embedded-rust-schulung.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://luehr.dev/embedded-rust-training.html"/>
-  </url>
-  <url>
-    <loc>https://luehr.dev/embedded-rust-schulung.html</loc>
-    <lastmod>2026-10-07</lastmod>
-    <xhtml:link rel="alternate" hreflang="de" href="https://luehr.dev/embedded-rust-schulung.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://luehr.dev/embedded-rust-training.html"/>
-  </url>
-  <url>
-    <loc>https://luehr.dev/imprint.html</loc>
-    <lastmod>2026-10-07</lastmod>
-  </url>
-  <url>
-    <loc>https://luehr.dev/privacy.html</loc>
-    <lastmod>2026-10-07</lastmod>
-  </url>
+<url><loc>https://luehr.dev/de/</loc><xhtml:link rel="alternate" hreflang="en" href="https://luehr.dev/"/><xhtml:link rel="alternate" hreflang="de" href="https://luehr.dev/de/"/></url>
+<url><loc>https://luehr.dev/embedded-rust-schulung.html</loc><xhtml:link rel="alternate" hreflang="de" href="https://luehr.dev/embedded-rust-schulung.html"/><xhtml:link rel="alternate" hreflang="en" href="https://luehr.dev/embedded-rust-training.html"/></url>
+<url><loc>https://luehr.dev/rust-basics-schulung.html</loc><xhtml:link rel="alternate" hreflang="de" href="https://luehr.dev/rust-basics-schulung.html"/><xhtml:link rel="alternate" hreflang="en" href="https://luehr.dev/rust-basics-training.html"/></url>
+<url><loc>https://luehr.dev/rust-embedded-linux-schulung.html</loc><xhtml:link rel="alternate" hreflang="de" href="https://luehr.dev/rust-embedded-linux-schulung.html"/><xhtml:link rel="alternate" hreflang="en" href="https://luehr.dev/rust-embedded-linux-training.html"/></url>
+<url><loc>https://luehr.dev/rust-no-std-schulung.html</loc><xhtml:link rel="alternate" hreflang="de" href="https://luehr.dev/rust-no-std-schulung.html"/><xhtml:link rel="alternate" hreflang="en" href="https://luehr.dev/rust-no-std-training.html"/></url>
+<url><loc>https://luehr.dev/rust-fuer-engineering-manager.html</loc><xhtml:link rel="alternate" hreflang="de" href="https://luehr.dev/rust-fuer-engineering-manager.html"/><xhtml:link rel="alternate" hreflang="en" href="https://luehr.dev/rust-for-engineering-managers.html"/></url>
+<url><loc>https://luehr.dev/</loc><xhtml:link rel="alternate" hreflang="en" href="https://luehr.dev/"/><xhtml:link rel="alternate" hreflang="de" href="https://luehr.dev/de/"/></url>
+<url><loc>https://luehr.dev/embedded-rust-training.html</loc><xhtml:link rel="alternate" hreflang="de" href="https://luehr.dev/embedded-rust-schulung.html"/><xhtml:link rel="alternate" hreflang="en" href="https://luehr.dev/embedded-rust-training.html"/></url>
+<url><loc>https://luehr.dev/rust-basics-training.html</loc><xhtml:link rel="alternate" hreflang="de" href="https://luehr.dev/rust-basics-schulung.html"/><xhtml:link rel="alternate" hreflang="en" href="https://luehr.dev/rust-basics-training.html"/></url>
+<url><loc>https://luehr.dev/rust-embedded-linux-training.html</loc><xhtml:link rel="alternate" hreflang="de" href="https://luehr.dev/rust-embedded-linux-schulung.html"/><xhtml:link rel="alternate" hreflang="en" href="https://luehr.dev/rust-embedded-linux-training.html"/></url>
+<url><loc>https://luehr.dev/rust-no-std-training.html</loc><xhtml:link rel="alternate" hreflang="de" href="https://luehr.dev/rust-no-std-schulung.html"/><xhtml:link rel="alternate" hreflang="en" href="https://luehr.dev/rust-no-std-training.html"/></url>
+<url><loc>https://luehr.dev/rust-for-engineering-managers.html</loc><xhtml:link rel="alternate" hreflang="de" href="https://luehr.dev/rust-fuer-engineering-manager.html"/><xhtml:link rel="alternate" hreflang="en" href="https://luehr.dev/rust-for-engineering-managers.html"/></url>
+<url><loc>https://luehr.dev/imprint.html</loc><xhtml:link rel="alternate" hreflang="en" href="https://luehr.dev/imprint.html"/><xhtml:link rel="alternate" hreflang="de" href="https://luehr.dev/impressum.html"/></url>
+<url><loc>https://luehr.dev/impressum.html</loc><xhtml:link rel="alternate" hreflang="en" href="https://luehr.dev/imprint.html"/><xhtml:link rel="alternate" hreflang="de" href="https://luehr.dev/impressum.html"/></url>
+<url><loc>https://luehr.dev/privacy.html</loc><xhtml:link rel="alternate" hreflang="en" href="https://luehr.dev/privacy.html"/><xhtml:link rel="alternate" hreflang="de" href="https://luehr.dev/datenschutz.html"/></url>
+<url><loc>https://luehr.dev/datenschutz.html</loc><xhtml:link rel="alternate" hreflang="en" href="https://luehr.dev/privacy.html"/><xhtml:link rel="alternate" hreflang="de" href="https://luehr.dev/datenschutz.html"/></url>
 </urlset>

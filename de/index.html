@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Embedded Rust Schulungen für Teams | Marc-Hendric Lühr</title>
+<meta name="description" content="Praxisnahe Rust-Schulungen für Entwicklerteams: Basics, Embedded Linux und no_std. Dazu ein Workshop für Engineering Manager. Mit Marc-Hendric Lühr.">
+<link rel="canonical" href="https://luehr.dev/de/">
+<link rel="alternate" hreflang="en" href="https://luehr.dev/">
+<link rel="alternate" hreflang="de" href="https://luehr.dev/de/">
+<link rel="alternate" hreflang="x-default" href="https://luehr.dev/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="luehr.dev">
+<meta property="og:title" content="Embedded Rust Schulungen für Teams | Marc-Hendric Lühr">
+<meta property="og:description" content="Praxisnahe Rust-Schulungen für Entwicklerteams: Basics, Embedded Linux und no_std. Dazu ein Workshop für Engineering Manager. Mit Marc-Hendric Lühr.">
+<meta property="og:url" content="https://luehr.dev/de/">
+<meta property="og:image" content="https://luehr.dev/avatar.jpg">
+<meta property="og:image:alt" content="Marc-Hendric Lühr">
+<meta property="og:locale" content="de_DE">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/IBMPlexSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/style.css?v=93eeb46e93">
+<script src="/theme.js?v=2d0c62b5f7">
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Person", "@id": "https://luehr.dev/#person", "name": "Marc-Hendric Lühr", "url": "https://luehr.dev/", "image": "https://luehr.dev/avatar.jpg", "jobTitle": "Embedded Engineer & Trainer", "sameAs": ["https://github.com/Th3Link", "https://linkedin.com/in/marcluehr"]}, {"@type": "WebSite", "@id": "https://luehr.dev/#website", "url": "https://luehr.dev/", "name": "luehr.dev", "inLanguage": ["de", "en"]}]}</script>
+</head>
+<body data-auto-language="true">
+<a class="skip-link" href="#main">Zum Inhalt</a>
+<header class="site-header wrap">
+<a class="wordmark" href="/de/">Marc-Hendric Lühr<span>Embedded engineering &amp; training</span>
+</a>
+<nav aria-label="Hauptnavigation">
+<a class="" href="/de/#training">Trainings</a>
+<a class="" href="/de/#engineering">Engineering</a>
+<a class="" href="/de/#about">Über mich</a>
+<a class="" href="/de/#contact">Kontakt</a>
+</nav>
+<div class="preferences">
+<nav class="language-switch" aria-label="Sprache">
+<a href="/de/" lang="de" hreflang="de" data-language="de" aria-current="page">Deutsch</a>
+<a href="/" lang="en" hreflang="en" data-language="en">English</a>
+</nav>
+<button id="theme-toggle" type="button" aria-label="Farbschema wechseln" aria-pressed="false">
+<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+<circle cx="12" cy="12" r="4"/>
+<path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/>
+</svg>
+</button>
+</div>
+<div class="header-profiles">
+<nav class="social-links" aria-label="Kontakt und Profile">
+<a href="mailto:marc@luehr.dev" class="social-link" aria-label="E-Mail">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/>
+<path d="m3 6 9 7 9-7" fill="none" stroke="currentColor" stroke-width="1.7"/>
+</svg>
+            </a>
+
+            <a href="https://github.com/th3link" class="social-link" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+                    <path class="outer" d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577
+                        0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61 -.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.082-.729.082-.729
+                        1.205.085 1.84 1.236 1.84 1.236 1.07 1.835 2.809 1.304 3.495.997.108-.776.418-1.305.762-1.605-2.665-.3
+                        -5.467-1.334-5.467-5.93 0-1.31.47-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176
+                        0 0 1.005-.322 3.3 1.23a11.52 11.52 0 013.003-.404 c1.02.005 2.045.138 3.003.404 2.28-1.552
+                        3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22
+                        0 4.61-2.805 5.625-5.475 5.92.435.375.81 1.102.81 2.222 0 1.606-.015 2.896-.015 3.286
+                        0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z" />
+                </svg>
+            </a>
+
+            <a href="https://linkedin.com/in/marcluehr" class="social-link" aria-label="LinkedIn">
+
+                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" shape-rendering="geometricPrecision"
+                    text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd"
+                    clip-rule="evenodd" viewBox="0 0 512 509.64">
+                    <path class="outer"
+                        d="M204.97 197.54h64.69v33.16h.94c9.01-16.16 31.04-33.16 63.89-33.16 68.31 0 80.94 42.51 80.94 97.81v116.92h-67.46l-.01-104.13c0-23.81-.49-54.45-35.08-54.45-35.12 0-40.51 25.91-40.51 52.72v105.86h-67.4V197.54zm-38.23-65.09c0 19.36-15.72 35.08-35.08 35.08-19.37 0-35.09-15.72-35.09-35.08 0-19.37 15.72-35.08 35.09-35.08 19.36 0 35.08 15.71 35.08 35.08zm-70.17 65.09h70.17v214.73H96.57V197.54z" />
+                </svg>
+            </a>
+
+
+
+            <a href="https://mastodon.social/@th3link" class="social-link" rel="me" aria-label="Mastodon">
+                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" width="61.076954mm" height="65.47831mm" class="fg"
+                    viewBox="0 0 216.4144 232.00976">
+                    <path class="outer"
+                        d="M211.80734 139.0875c-3.18125 16.36625-28.4925 34.2775-57.5625 37.74875-15.15875 1.80875-30.08375 3.47125-45.99875 2.74125-26.0275-1.1925-46.565-6.2125-46.565-6.2125 0 2.53375.15625 4.94625.46875 7.2025 3.38375 25.68625 25.47 27.225 46.39125 27.9425 21.11625.7225 39.91875-5.20625 39.91875-5.20625l.8675 19.09s-14.77 7.93125-41.08125 9.39c-14.50875.7975-32.52375-.365-53.50625-5.91875C9.23234 213.82 1.40609 165.31125.20859 116.09125c-.365-14.61375-.14-28.39375-.14-39.91875 0-50.33 32.97625-65.0825 32.97625-65.0825C49.67234 3.45375 78.20359.2425 107.86484 0h.72875c29.66125.2425 58.21125 3.45375 74.8375 11.09 0 0 32.975 14.7525 32.975 65.0825 0 0 .41375 37.13375-4.59875 62.915" />
+                    <path class="inner"
+                        d="M177.50984 80.077v60.94125h-24.14375v-59.15c0-12.46875-5.24625-18.7975-15.74-18.7975-11.6025 0-17.4175 7.5075-17.4175 22.3525v32.37625H96.20734V85.42325c0-14.845-5.81625-22.3525-17.41875-22.3525-10.49375 0-15.74 6.32875-15.74 18.7975v59.15H38.90484V80.077c0-12.455 3.17125-22.3525 9.54125-29.675 6.56875-7.3225 15.17125-11.07625 25.85-11.07625 12.355 0 21.71125 4.74875 27.8975 14.2475l6.01375 10.08125 6.015-10.08125c6.185-9.49875 15.54125-14.2475 27.8975-14.2475 10.6775 0 19.28 3.75375 25.85 11.07625 6.36875 7.3225 9.54 17.22 9.54 29.675" />
+                </svg>
+            </a>
+
+            <a href="https://www.freelancermap.de/profil/software-development-engineer-embedded-systems-software-architect-embedded-linux-und-modern-c" class="social-link" aria-label="freelancermap">
+                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewBox="77 76 280 280">
+                    <g transform="translate(0,425) scale(0.1,-0.1)">
+                        <path class="outer" d="M1905 3319 c-314 -48 -445 -243 -445 -661 l0 -198 -85 0 -84 0 -47
+-147 c-26 -82 -49 -153 -51 -160 -4 -9 29 -13 129 -15 l133 -3 3 -652 2 -653
+180 0 180 0 0 655 0 655 159 0 159 0 51 153 c28 83 51 155 51 160 0 4 -94 7
+-210 7 l-210 0 0 168 c0 367 116 440 441 276 l108 -53 50 152 c28 84 51 156
+51 160 0 14 -221 114 -298 136 -90 25 -189 32 -267 20z M2312 2008 c-210 -634
+-382 -1156 -382 -1161 0 -4 86 -6 191 -5 l191 3 199 600 c109 330 282 851 383
+1158 l184 557 -192 0 -192 0 -382 -1152z" />
+                    </g>
+                </svg>
+            </a>
+</nav>
+</div>
+</header>
+<main id="main" tabindex="-1">
+<section class="hero wrap">
+<div>
+<p class="eyebrow">Unabhängiger Embedded Engineer und Trainer</p>
+<h1>Rust-Schulungen<br> für Embedded-Teams.</h1>
+<p class="intro">Rust praktisch lernen. Vom Einstieg über Anwendungen auf Embedded Linux bis zur Firmware ohne Standardbibliothek.</p>
+<p>Ich bin Marc. Ich arbeite an Embedded-Systemen und helfe Teams, Rust zu verstehen und im eigenen Projekt einzusetzen.</p>
+<div class="actions">
+<a class="button" href="#training">Trainings ansehen</a>
+<a class="text-link" href="#contact">Teamtraining besprechen</a>
+</div>
+</div>
+<figure class="portrait">
+<img src="/avatar.jpg" width="640" height="640" alt="Marc-Hendric Lühr, Embedded Engineer und Trainer" fetchpriority="high">
+<figcaption>
+<strong>Marc-Hendric Lühr</strong>
+<span class="personal-note">Marc reicht völlig.</span>
+<span>Embedded Linux · Rust · Firmware</span>
+</figcaption>
+</figure>
+</section>
+<section id="training" class="section wrap">
+<div class="section-heading">
+<p class="eyebrow">01 / Trainings</p>
+<h2>Das passende Training für euer Team.</h2>
+<p>Drei Entwicklertrainings und ein Workshop für technische Entscheider. Auf Deutsch oder Englisch. Termine vereinbaren wir individuell.</p>
+</div>
+<article class="training-row" id="basics">
+<span class="course-number">01</span>
+<div>
+<p class="eyebrow">Für Entwickler, die mit Rust beginnen.</p>
+<h3>
+<a class="" href="/rust-basics-schulung.html">Rust Basics</a>
+</h3>
+<p>Rust von Grund auf lernen und in einem zusammenhängenden Programm anwenden. Mit Ownership, Fehlerbehandlung, Tests und Cross-Compilation.</p>
+<p class="topic-line">Ownership · Traits · Testing · Cross-Compilation</p>
+</div>
+<div class="course-meta">
+<strong>3–4 Tage · ab 12.000 € zzgl. MwSt.</strong>
+<p>Remote oder vor Ort · 5–10 Teilnehmer</p>
+<a class="text-link" href="/rust-basics-schulung.html">Zum Training →</a>
+</div>
+</article>
+<article class="training-row" id="embedded-linux">
+<span class="course-number">02</span>
+<div>
+<p class="eyebrow">Für Teams mit Anwendungen auf Linux-Geräten.</p>
+<h3>
+<a class="" href="/rust-embedded-linux-schulung.html">Rust Advanced: Embedded Linux</a>
+</h3>
+<p>Rust für Anwendungen und Dienste auf Embedded Linux. Nebenläufigkeit, D-Bus und Web-APIs, mit Tests und einer abgesicherten Build- und Release-Pipeline.</p>
+<p class="topic-line">Async Rust · D-Bus · axum · CI/CD</p>
+</div>
+<div class="course-meta">
+<strong>3–4 Tage · ab 12.000 € zzgl. MwSt.</strong>
+<p>Remote oder vor Ort · 5–10 Teilnehmer</p>
+<a class="text-link" href="/rust-embedded-linux-schulung.html">Zum Training →</a>
+</div>
+</article>
+<article class="training-row" id="no-std">
+<span class="course-number">03</span>
+<div>
+<p class="eyebrow">Für Teams, die Firmware auf Mikrocontrollern entwickeln.</p>
+<h3>
+<a class="" href="/rust-no-std-schulung.html">Rust Advanced: Embedded no_std</a>
+</h3>
+<p>Rust direkt auf dem Mikrocontroller, ohne Standardbibliothek. Mit Embassy, Embedded-Traits, begrenztem Speicher und Hardware-Debugging.</p>
+<p class="topic-line">Embassy · embedded-hal · heapless · SWD/JTAG</p>
+</div>
+<div class="course-meta">
+<strong>4 Tage vor Ort · 15.000 € zzgl. MwSt.</strong>
+<p>Remote nur in Ausnahmefällen.</p>
+<a class="text-link" href="/rust-no-std-schulung.html">Zum Training →</a>
+</div>
+</article>
+<article class="training-row" id="managers">
+<span class="course-number">04</span>
+<div>
+<p class="eyebrow">Für technische Entscheider, die Rust evaluieren.</p>
+<h3>
+<a class="" href="/rust-fuer-engineering-manager.html">Rust für Engineering Manager</a>
+</h3>
+<p>Chancen, Risiken und wirtschaftlichen Nutzen einer Rust-Einführung bewerten. Ein praktischer Einstieg in Kosten, technische Grenzen und mögliche Migrationswege.</p>
+<p class="topic-line">Rust vs. C/C++ · Einführung · Migration · Entscheidung</p>
+</div>
+<div class="course-meta">
+<strong>½ Tag · 500 € remote / 700 € vor Ort, zzgl. MwSt.</strong>
+<p>Vor Ort nach geografischer Abstimmung.</p>
+<a class="text-link" href="/rust-fuer-engineering-manager.html">Zum Training →</a>
+</div>
+</article>
+</section>
+<section class="section tinted">
+<div class="wrap two-column">
+<div>
+<p class="eyebrow">02 / Arbeitsweise</p>
+<h2>Selbst programmieren.<br>Zusammen verstehen.</h2>
+<p>Im Entwicklertraining lösen wir konkrete Aufgaben. Sprachkonzepte und technische Hintergründe kommen dann dazu, wenn sie gebraucht werden.</p>
+</div>
+<div class="prose">
+<figure class="technical-graphic training-graphic">
+<svg viewBox="0 0 520 206" role="img" aria-labelledby="training-path-title">
+<title id="training-path-title">Die Entwicklertrainings: Rust Basics als Grundlage, danach Embedded Linux oder no_std.</title>
+<g class="diagram-wire">
+<path d="M164 94h55V47h44M219 94v53h44"/>
+<circle cx="219" cy="94" r="4"/>
+</g>
+<g class="diagram-block">
+<rect x="2" y="60" width="162" height="68" rx="5"/>
+<rect x="265" y="14" width="253" height="68" rx="5"/>
+<rect x="265" y="116" width="253" height="68" rx="5"/>
+</g>
+<g class="diagram-label">
+<text x="20" y="89">Rust Basics</text>
+<text x="20" y="110" class="diagram-small">Ownership / Traits</text>
+<text x="283" y="43">Embedded Linux</text>
+<text x="283" y="65" class="diagram-small">std / Async / Services</text>
+<text x="283" y="145">Embedded no_std</text>
+<text x="283" y="167" class="diagram-small">Embassy / HAL / Debugging</text>
+</g>
+</svg>
+<div class="training-map-mobile">
+<div class="training-node">
+<strong>Rust Basics</strong>
+<span>Ownership / Traits</span>
+</div>
+<div class="training-branches">
+<div class="training-node">
+<strong>Embedded Linux</strong>
+<span>std / Async / Services</span>
+</div>
+<div class="training-node">
+<strong>Embedded no_std</strong>
+<span>Embassy / HAL / Debugging</span>
+</div>
+</div>
+</div>
+</figure>
+<h3>Ein Programm, das mitwächst</h3>
+<p>In Rust Basics entwickeln wir ein kleines Spiel und erweitern es mit jedem Thema. Die Advanced-Trainings bauen darauf auf. Nach Absprache ist in Basics auch ein erstes Programm aus eurem Arbeitsgebiet möglich.</p>
+<h3>Mit Blick auf euren Alltag</h3>
+<p>Cross-Compilation, Tests, Debugging und CI/CD gehören dazu. Themen und Technologien stimmen wir vorher ab. Mein Ziel ist, dass ihr danach selbstständig weiterarbeiten könnt.</p>
+<p>Ihr wollt Rust zunächst bewerten? Der Manager-Workshop behandelt Einführung, Aufwand und Entscheidungskriterien.</p>
+<a class="text-link" href="/rust-fuer-engineering-manager.html">Zum Workshop für Engineering Manager</a>
+</div>
+</div>
+</section>
+<section id="engineering" class="section wrap">
+<div class="engineering-intro">
+<div class="section-heading">
+<p class="eyebrow">03 / Engineering</p>
+<h2>Unterstützung über das Training hinaus.</h2>
+<p>Embedded Linux, Rust-Einführung und verlässliche Firmware. Dazu unterstütze ich Teams durch Coaching, Beratung und ausgewählte Implementierungsarbeit.</p>
+</div>
+<figure class="technical-graphic hardware-graphic">
+<svg viewBox="0 0 420 270" role="img" aria-labelledby="hardware-title">
+<title id="hardware-title">Schematische Embedded-Platine mit Prozessor, Firmware, Speicher und Schnittstellen.</title>
+<rect class="diagram-board" x="24" y="24" width="372" height="222" rx="10"/>
+<g class="diagram-wire">
+<path d="M168 104H91V67M168 117H64v70h38M232 104h47V67M232 117h116v70h-34M181 84V49m14 35V49m14 35V49m14 35V49M181 150v58m14-58v58m14-58v58m14-58v58"/>
+<circle cx="91" cy="67" r="5"/>
+<circle cx="279" cy="67" r="5"/>
+<circle cx="48" cy="44" r="4"/>
+<circle cx="372" cy="44" r="4"/>
+<circle cx="48" cy="226" r="4"/>
+<circle cx="372" cy="226" r="4"/>
+</g>
+<g class="diagram-block">
+<rect x="155" y="84" width="90" height="68" rx="3"/>
+<rect x="102" y="171" width="48" height="30" rx="2"/>
+<rect x="265" y="171" width="48" height="30" rx="2"/>
+</g>
+<g class="diagram-label">
+<text x="171" y="111">CPU</text>
+<text x="171" y="133" class="diagram-small">Firmware</text>
+<text x="109" y="191" class="diagram-small">I²C</text>
+<text x="273" y="191" class="diagram-small">CAN</text>
+<text x="105" y="72" class="diagram-small">SWD / JTAG</text>
+<text x="290" y="63" class="diagram-small">Speicher</text>
+<text x="70" y="231" class="diagram-small">Von der Hardware zur Software.</text>
+</g>
+</svg>
+</figure>
+</div>
+<div class="services-grid">
+<article>
+<h3>Embedded Linux &amp; Yocto</h3>
+<p>Robuste Linux-Geräte entwickeln und langfristig betreuen.</p>
+<ul>
+<li>Yocto</li>
+<li>BSP-Integration</li>
+<li>Systemarchitektur</li>
+<li>Langfristige Wartung</li>
+</ul>
+</article>
+<article>
+<h3>Embedded Rust Training &amp; Einführung</h3>
+<p>Rust in Embedded-Teams einführen und die nötige Erfahrung im Team aufbauen.</p>
+<ul>
+<li>Embedded-Rust-Training, remote oder vor Ort</li>
+<li>Inhouse-Workshops</li>
+<li>Mentoring &amp; Code Reviews</li>
+<li>Migrationsstrategien</li>
+</ul>
+<a class="text-link" href="/embedded-rust-schulung.html">Embedded-Rust-Trainings im Detail →</a>
+</article>
+<article>
+<h3>Qualität &amp; Security</h3>
+<p>Zuverlässigkeit, Wartbarkeit und Sicherheit über den gesamten Produktlebenszyklus verbessern.</p>
+<ul>
+<li>Testautomatisierung</li>
+<li>Secure Boot</li>
+<li>Signierte Softwareupdates</li>
+<li>SBOM-Erstellung</li>
+<li>CVE-Monitoring</li>
+<li>Härtung von Embedded-Systemen</li>
+</ul>
+</article>
+<article>
+<h3>Coaching</h3>
+<p>Teams beim Aufbau von Wissen und Selbstständigkeit in der modernen Embedded-Entwicklung unterstützen.</p>
+<ul>
+<li>Workshops</li>
+<li>Team-Mentoring</li>
+<li>Code Reviews</li>
+<li>Pair Programming</li>
+</ul>
+</article>
+<article>
+<h3>Consulting</h3>
+<p>Technische Unterstützung bei Architekturentscheidungen, der Einführung von Technologien und anspruchsvollen Engineering-Fragen.</p>
+<ul>
+<li>Architekturreviews</li>
+<li>Technische Strategie</li>
+<li>Technologiebewertung</li>
+<li>Projektbegleitung</li>
+</ul>
+</article>
+<article>
+<h3>Implementierung</h3>
+<p>Ausgewählte Entwicklungsarbeit für Prototypen, kritische Komponenten und anspruchsvolle Engineering-Aufgaben.</p>
+<ul>
+<li>Architekturüberarbeitung</li>
+<li>Machbarkeitsnachweise</li>
+<li>Technologieumstellungen</li>
+<li>Zeitweise Engineering-Unterstützung</li>
+</ul>
+</article>
+</div>
+<div class="engineering-note">
+<p>Nicht jedes Problem passt in eine Kategorie. Manchmal ist es am sinnvollsten, sich zusammenzusetzen, gemeinsam hinzuschauen und pragmatisch weiterzuarbeiten.</p>
+<p>Die meisten Einsätze finden remote statt. Ich arbeite auch gern direkt mit Teams vor Ort und reise regelmäßig durch Nord- und Mitteldeutschland. Andere Orte besprechen wir bei Bedarf.</p>
+<a class="text-link" href="#contact">Über euer Projekt sprechen</a>
+</div>
+</section>
+<section id="expertise" class="section tinted">
+<div class="wrap">
+<div class="section-heading">
+<p class="eyebrow">Technologien & Fachgebiete</p>
+<h2>Tools of the Trade</h2>
+<p>Technologien sollten dem Produkt dienen. Moderne Embedded-Systeme brauchen einen Blick über einzelne Technologien hinaus. Meine Arbeit verbindet Linux, Firmware, Netzwerktechnik, Tests, Security und die Werkzeuge dazwischen. Mit diesen Technologien und Fachgebieten arbeite ich regelmäßig.</p>
+</div>
+<div class="expertise-grid">
+<article>
+<h3>Embedded-Systeme &amp; Architektur</h3>
+<ul>
+<li>Embedded Linux</li>
+<li>Yocto</li>
+<li>Systemarchitektur</li>
+<li>Hardwareintegration</li>
+<li>Prototyping</li>
+<li>Konzeptentwicklung</li>
+<li>systemd</li>
+<li>D-Bus</li>
+</ul>
+</article>
+<article>
+<h3>Programmiersprachen</h3>
+<ul>
+<li>Rust (bevorzugt)</li>
+<li>Go</li>
+<li>C</li>
+<li>C++</li>
+<li>Python</li>
+</ul>
+</article>
+<article>
+<h3>Hardwareverständnis</h3>
+<ul>
+<li>Schaltpläne lesen</li>
+<li>Verständnis auf Board-Ebene</li>
+<li>Signalschnittstellen</li>
+<li>Hardware-Inbetriebnahme</li>
+</ul>
+</article>
+<article>
+<h3>Netzwerktechnik</h3>
+<ul>
+<li>Linux-Netzwerktechnik</li>
+<li>TCP/IP</li>
+<li>IPv6</li>
+<li>MQTT</li>
+<li>TLS/SSL</li>
+</ul>
+</article>
+<article>
+<h3>Schnittstellen &amp; Protokolle</h3>
+<ul>
+<li>CAN</li>
+<li>USB</li>
+<li>RS485</li>
+<li>Modbus</li>
+<li>SPI</li>
+<li>I²C</li>
+<li>I²S/TDM</li>
+<li>UART</li>
+</ul>
+</article>
+<article>
+<h3>Security &amp; Integrität</h3>
+<ul>
+<li>Secure Boot</li>
+<li>Sichere Firmware-/OTA-Updates</li>
+<li>SBOM</li>
+<li>CVE-Prüfung</li>
+<li>Firmwareintegrität</li>
+</ul>
+</article>
+<article>
+<h3>Tests &amp; Qualität</h3>
+<ul>
+<li>Testautomatisierung</li>
+<li>CI/CD</li>
+<li>Reproduzierbare Builds</li>
+<li>Hardware-in-the-Loop</li>
+<li>Testumgebungen</li>
+<li>Integrationstests</li>
+<li>Fehleranalyse</li>
+</ul>
+</article>
+</div>
+</div>
+</section>
+<section id="about" class="section wrap">
+<div class="two-column">
+<div>
+<p class="eyebrow">04 / Über mich</p>
+<h2>Ich arbeite selbst<br>an diesen Themen.</h2>
+</div>
+<div class="prose">
+<p>Ich nutze Open Source seit Beginn meiner beruflichen Laufbahn und bevorzuge offene Technologien, wo es sinnvoll ist. In eigenen Projekten verbinde ich Rust-Netzwerkbibliotheken, Hardware und Software zu vollständigen Systemen. Dabei probiere ich Ideen aus, überprüfe Ansätze und bleibe selbst nah an der praktischen Entwicklung.</p>
+<p>Technologien ändern sich. Gute Engineering-Praxis und Teams, die selbstständig weiterarbeiten können, bleiben wertvoll.</p>
+</div>
+</div>
+<div class="projects">
+<article id="ipv6-router-advertisement">
+<span class="eyebrow">Rust / Networking</span>
+<h3>
+<a class="" href="https://github.com/Th3Link/ipv6-router-advertisement">IPv6 Router Advertisement</a>
+</h3>
+<p>Rust-Implementierung für IPv6 Router Advertisements. Mit Fokus auf Codequalität, Tests, Wartbarkeit und Embedded-Anwendungsfälle.</p>
+</article>
+<article id="homeautomation">
+<span class="eyebrow">Hardware / Firmware / Linux</span>
+<h3>
+<a class="" href="https://github.com/Th3Link/homeautomation">Homeautomation</a>
+</h3>
+<p>Eine offene Hausautomationsplattform mit eigener Hardware, Embedded-Software und Systemintegration. In realen Umgebungen entwickelt und betrieben, mit Fokus auf skalierbarem Embedded-Design, langfristiger Wartbarkeit und kosteneffizientem Betrieb.</p>
+</article>
+<article id="curvyo">
+<span class="eyebrow">Rust / Tauri / Vektorwerkzeuge</span>
+<h3>
+<a class="" href="https://github.com/curvyo/curvyo">Curvyo</a>
+</h3>
+<p>Vektorgrafiken gestalten und für Lasercutter, Plotter, Stickmaschinen und CNC-Fräsen aufbereiten. Mit Rust und Tauri, für Linux, Windows, macOS, Android, iOS und den Browser.</p>
+<p>Vollständig von KI-Agenten entwickelt, mit mir als Auftraggeber und technischer Leitung: Richtung vorgeben, technische Entscheidungen treffen, präzise spezifizieren, Reviews durchführen, testen und Fehler melden. Spezifikationsgetrieben, mit einer durchgängigen CI/CD-Pipeline.</p>
+</article>
+</div>
+<p class="personal-statement">Ich berate nicht nur zu Embedded-Systemen. Ich entwickle und betreibe sie selbst.</p>
+</section>
+<section id="contact" class="contact-band">
+<div class="wrap contact-layout">
+<div>
+<p class="eyebrow">Kontakt</p>
+<h2>Planen wir euer Rust-Training.</h2>
+<p>Welche Vorkenntnisse bringt ihr mit, und woran arbeitet ihr? Schreib mir oder vereinbare ein Erstgespräch.</p>
+</div>
+<div>
+<div class="actions">
+<a class="button" href="mailto:marc@luehr.dev?subject=Anfrage%20Rust%20Teamtraining">Training anfragen</a>
+<a class="text-link" href="https://zeeg.me/marcluehr/getting-to-know">Erstgespräch buchen</a>
+</div>
+<a class="email" href="mailto:marc@luehr.dev">marc@luehr.dev</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="site-footer wrap">
+<div>
+<strong>Marc-Hendric Lühr</strong>
+<p>Remote in Europa · Vor Ort nach Absprache</p>
+</div>
+<nav aria-label="Weitere Links">
+<a class="" href="/impressum.html">Impressum</a>
+<a class="" href="/datenschutz.html">Datenschutz</a>
+<a class="" href="https://github.com/Th3Link">GitHub</a>
+<a class="" href="https://linkedin.com/in/marcluehr">LinkedIn</a>
+<a class="" href="https://blog.luehr.dev/">Blog</a>
+<a class="" href="https://www.exali.de/siegel/Marc-Hendric-Luehr_1025">Berufshaftpflicht</a>
+</nav>
+<small>© Marc-Hendric Lühr · IBM Plex · <a href="/assets/fonts/OFL.txt">SIL Open Font License</a>
+</small>
+</footer>
+</body>
+</html>

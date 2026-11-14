@@ -1,98 +1,76 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Marc-Hendric Lühr – Embedded Linux, Firmware Architecture & Embedded Rust Training</title>
-    <meta name="description"
-        content="Independent embedded coach and consultant: Embedded Linux, Yocto, firmware architecture, quality & security, and Embedded Rust training for engineering teams. Remote across Europe, on-site in Germany." />
-    <link rel="canonical" href="https://luehr.dev/" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="luehr.dev" />
-    <meta property="og:title" content="Marc-Hendric Lühr – Embedded Linux, Firmware & Embedded Rust Training" />
-    <meta property="og:description"
-        content="Helping teams build reliable embedded systems, adopt Rust and grow engineering expertise. Remote across Europe, on-site in Germany." />
-    <meta property="og:url" content="https://luehr.dev/" />
-    <meta property="og:image" content="https://luehr.dev/avatar.jpg" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <link rel="icon" href="favicon.svg" sizes="any" type="image/svg+xml" />
-    <link rel="me" href="https://mastodon.social/@Th3Link" />
-    <script defer src="https://unpkg.com/lucide@1.52.0/dist/umd/lucide.min.js"></script>
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Marc-Hendric Lühr",
-        "url": "https://luehr.dev/",
-        "image": "https://luehr.dev/avatar.jpg",
-        "jobTitle": "Embedded Coach & Consultant",
-        "description": "Embedded Linux, firmware architecture, quality & security and Embedded Rust training for engineering teams.",
-        "knowsAbout": ["Embedded Rust", "Embedded Linux", "Yocto", "Firmware architecture", "Cortex-M", "STM32", "nRF52", "Test automation", "Secure boot"],
-        "sameAs": [
-            "https://github.com/Th3Link",
-            "https://linkedin.com/in/marcluehr",
-            "https://mastodon.social/@Th3Link",
-            "https://www.freelancermap.de/profil/software-development-engineer-embedded-systems-software-architect-embedded-linux-und-modern-c"
-        ]
-    }
-    </script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Embedded Rust Training for Teams | Marc-Hendric Lühr</title>
+<meta name="description" content="Hands-on Rust training for engineering teams: basics, Embedded Linux and no_std. Plus a Rust adoption workshop for engineering managers. With Marc-Hendric Lühr.">
+<link rel="canonical" href="https://luehr.dev/">
+<link rel="alternate" hreflang="en" href="https://luehr.dev/">
+<link rel="alternate" hreflang="de" href="https://luehr.dev/de/">
+<link rel="alternate" hreflang="x-default" href="https://luehr.dev/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="luehr.dev">
+<meta property="og:title" content="Embedded Rust Training for Teams | Marc-Hendric Lühr">
+<meta property="og:description" content="Hands-on Rust training for engineering teams: basics, Embedded Linux and no_std. Plus a Rust adoption workshop for engineering managers. With Marc-Hendric Lühr.">
+<meta property="og:url" content="https://luehr.dev/">
+<meta property="og:image" content="https://luehr.dev/avatar.jpg">
+<meta property="og:image:alt" content="Marc-Hendric Lühr">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/IBMPlexSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/style.css?v=93eeb46e93">
+<script src="/theme.js?v=2d0c62b5f7">
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Person", "@id": "https://luehr.dev/#person", "name": "Marc-Hendric Lühr", "url": "https://luehr.dev/", "image": "https://luehr.dev/avatar.jpg", "jobTitle": "Embedded Engineer & Trainer", "sameAs": ["https://github.com/Th3Link", "https://linkedin.com/in/marcluehr"]}, {"@type": "WebSite", "@id": "https://luehr.dev/#website", "url": "https://luehr.dev/", "name": "luehr.dev", "inLanguage": ["de", "en"]}]}</script>
 </head>
-
-<body>
-    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle light/dark theme">
-        🌙
-    </button>
-    <section class="page even">
-        <div class="hero">
-            <div class="hero-content">
-                <div class="hero-image hero-hover">
-                    <img src="avatar.jpg" alt="Portrait of Marc-Hendric Lühr" />
-                </div>
-
-                <div class="hero-text">
-                    <h2>Marc-Hendric Lühr</h2>
-                    <p>Just Marc is perfectly fine</p>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="lead">
-                <p>Technology choices come and go. Sound <strong>engineering practices</strong>, maintainable
-                    architectures and capable
-                    teams
-                    remain valuable for years.<br />
-                    I work alongside engineering teams to solve real-world problems, <strong>transfer
-                        knowledge</strong> and build solutions
-                    that
-                    remain maintainable long after the engagement ends.
-                    <br />My goal is to <strong>help teams</strong> build the expertise and
-                    confidence to move forward on their own.
-                </p>
-            </div>
-        </div>
-        <h1>Embedded Linux, Firmware Architecture & Coaching</h1>
-        <h2>Helping teams build reliable embedded systems,
-            adopt modern technologies and grow engineering expertise.</h2>
-        <div class="contact">
-            <a href="mailto:marc@luehr.dev" class="contact-btn blue" aria-label="Email">
-                <i data-lucide="mail"></i>
+<body data-auto-language="true">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header wrap">
+<a class="wordmark" href="/">Marc-Hendric Lühr<span>Embedded engineering &amp; training</span>
+</a>
+<nav aria-label="Main navigation">
+<a class="" href="/#training">Training</a>
+<a class="" href="/#engineering">Engineering</a>
+<a class="" href="/#about">About</a>
+<a class="" href="/#contact">Contact</a>
+</nav>
+<div class="preferences">
+<nav class="language-switch" aria-label="Language">
+<a href="/de/" lang="de" hreflang="de" data-language="de">Deutsch</a>
+<a href="/" lang="en" hreflang="en" data-language="en" aria-current="page">English</a>
+</nav>
+<button id="theme-toggle" type="button" aria-label="Change color theme" aria-pressed="false">
+<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+<circle cx="12" cy="12" r="4"/>
+<path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/>
+</svg>
+</button>
+</div>
+<div class="header-profiles">
+<nav class="social-links" aria-label="Contact and profiles">
+<a href="mailto:marc@luehr.dev" class="social-link" aria-label="Email">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/>
+<path d="m3 6 9 7 9-7" fill="none" stroke="currentColor" stroke-width="1.7"/>
+</svg>
             </a>
 
-            <a href="https://github.com/th3link" class="contact-btn blue" aria-label="GitHub">
+            <a href="https://github.com/th3link" class="social-link" aria-label="GitHub">
                 <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
                     <path class="outer" d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577
                         0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61 -.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.082-.729.082-.729
                         1.205.085 1.84 1.236 1.84 1.236 1.07 1.835 2.809 1.304 3.495.997.108-.776.418-1.305.762-1.605-2.665-.3
-                        -5.467-1.334-5.467-5.93 0-1.31.47-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 
-                        0 0 1.005-.322 3.3 1.23a11.52 11.52 0 013.003-.404 c1.02.005 2.045.138 3.003.404 2.28-1.552 
-                        3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 
-                        0 4.61-2.805 5.625-5.475 5.92.435.375.81 1.102.81 2.222 0 1.606-.015 2.896-.015 3.286 
+                        -5.467-1.334-5.467-5.93 0-1.31.47-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176
+                        0 0 1.005-.322 3.3 1.23a11.52 11.52 0 013.003-.404 c1.02.005 2.045.138 3.003.404 2.28-1.552
+                        3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22
+                        0 4.61-2.805 5.625-5.475 5.92.435.375.81 1.102.81 2.222 0 1.606-.015 2.896-.015 3.286
                         0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z" />
                 </svg>
             </a>
 
-            <a href="https://linkedin.com/in/marcluehr" class="contact-btn blue" aria-label="LinkedIn">
+            <a href="https://linkedin.com/in/marcluehr" class="social-link" aria-label="LinkedIn">
 
                 <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" shape-rendering="geometricPrecision"
                     text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd"
@@ -102,26 +80,9 @@
                 </svg>
             </a>
 
-            <!--a href="https://youtube.com/@yourname" class="contact-btn blue">
 
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 333333 333333" shape-rendering="geometricPrecision"
-                    text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd"
-                    clip-rule="evenodd">
-                    <path class="outer"
-                        d="M329930 100020s-3254-22976-13269-33065c-12691-13269-26901-13354-33397-14124-46609-3396-116614-3396-116614-3396h-122s-69973 0-116608 3396c-6522 793-20712 848-33397 14124C6501 77044 3316 100020 3316 100020S-1 126982-1 154001v25265c0 26962 3315 53979 3315 53979s3254 22976 13207 33082c12685 13269 29356 12838 36798 14254 26685 2547 113354 3315 113354 3315s70065-124 116675-3457c6522-770 20706-848 33397-14124 10021-10089 13269-33090 13269-33090s3319-26962 3319-53979v-25263c-67-26962-3384-53979-3384-53979l-18 18-2-2zM132123 209917v-93681l90046 46997-90046 46684z" />
-                </svg>
-            </a>
 
-            <a href="https://x.com/yourname" class="contact-btn blue">
-                <svg xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision"
-                    text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd"
-                    clip-rule="evenodd" viewBox="0 0 512 462.799">
-                    <path class="outer"
-                        d="M403.229 0h78.506L310.219 196.04 512 462.799H354.002L230.261 301.007 88.669 462.799h-78.56l183.455-209.683L0 0h161.999l111.856 147.88L403.229 0zm-27.556 415.805h43.505L138.363 44.527h-46.68l283.99 371.278z" />
-                </svg>
-            </a-->
-
-            <a href="https://mastodon.social/@th3link" class="contact-btn blue" rel="me" aria-label="Mastodon">
+            <a href="https://mastodon.social/@th3link" class="social-link" rel="me" aria-label="Mastodon">
                 <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" width="61.076954mm" height="65.47831mm" class="fg"
                     viewBox="0 0 216.4144 232.00976">
                     <path class="outer"
@@ -131,7 +92,7 @@
                 </svg>
             </a>
 
-            <a href="https://www.freelancermap.de/profil/software-development-engineer-embedded-systems-software-architect-embedded-linux-und-modern-c" class="contact-btn blue" aria-label="freelancermap">
+            <a href="https://www.freelancermap.de/profil/software-development-engineer-embedded-systems-software-architect-embedded-linux-und-modern-c" class="social-link" aria-label="freelancermap">
                 <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewBox="77 76 280 280">
                     <g transform="translate(0,425) scale(0.1,-0.1)">
                         <path class="outer" d="M1905 3319 c-314 -48 -445 -243 -445 -661 l0 -198 -85 0 -84 0 -47
@@ -144,431 +105,421 @@
                     </g>
                 </svg>
             </a>
-        </div>
-
-        <div class="container">
-            <div class="grid colorful">
-                <div class="card">
-                    <div class="header">
-                        <div class="icon">
-                            <i data-lucide="graduation-cap"></i>
-                        </div>
-                        <h3>Coaching</h3>
-                    </div>
-                    <p>Help your team build expertise and confidence in modern embedded development.</p>
-                    <ul>
-                        <li>Workshops</li>
-                        <li>Team Mentoring</li>
-                        <li>Code Reviews</li>
-                        <li>Pair Programming</li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <div class="header">
-                        <div class="icon">
-                            <i data-lucide="message-circle-code"></i>
-                        </div>
-                        <h3>Consulting</h3>
-                    </div>
-                    <p>Technical guidance for architecture decisions, technology adoption and complex engineering
-                        challenges.</p>
-                    <ul>
-                        <li>Architecture Reviews</li>
-                        <li>Technical Strategy</li>
-                        <li>Technology Evaluation</li>
-                        <li>Project Guidance</li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <div class="header">
-                        <div class="icon">
-                            <i data-lucide="pocket-knife"></i>
-                        </div>
-                        <h3>Implementation</h3>
-                    </div>
-                    <p>Selective hands-on implementation for prototypes,
-                        critical components and challenging engineering tasks.</p>
-                    <ul>
-                        <li>Architecture redesigns</li>
-                        <li>Proof of Concepts</li>
-                        <li>Technology transitions</li>
-                        <li>Temporary engineering support</li>
-                    </ul>
-                </div>
-
-            </div>
-            <div class="lead">
-                <p>
-                    Most engagements are fully <strong>remote</strong>, but I also enjoy working directly with teams
-                    <strong>on-site</strong>. I regularly
-                    travel throughout Northern and Central Germany and am happy to discuss other locations when it
-                    makes
-                    sense.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section class="page odd" id="training">
-        <div class="container">
-            <h1 class="blue">Embedded Rust Training</h1>
-            <p class="subtitle">Three hands-on Rust trainings for engineering teams, remote or on-site, at a fixed price.
-                In English or German.</p>
-            <div class="grid colorful">
-                <a class="card" href="embedded-rust-training.html#basics">
-                    <h3>Rust Basics</h3>
-                    <p>Getting started with Rust: from toolchain and ownership to testing, cross compilation and CI/CD.</p>
-                    <span class="card-link">3–4 days · from €12,000 net →</span>
-                </a>
-                <a class="card" href="embedded-rust-training.html#embedded-linux">
-                    <h3>Rust Advanced: Embedded Linux</h3>
-                    <p>Async with tokio and smol, D-Bus, axum, dependency management and a secure supply chain.</p>
-                    <span class="card-link">3–4 days · from €12,000 net →</span>
-                </a>
-                <a class="card" href="embedded-rust-training.html#no-std">
-                    <h3>Rust Advanced: Embedded no_std</h3>
-                    <p>Rust on microcontrollers: Embassy, embedded-hal traits, heapless, defmt and debugging via SWD/JTAG.</p>
-                    <span class="card-link">4 days on-site · €15,000 net →</span>
-                </a>
-            </div>
-            <div class="cta-row">
-                <a class="btn" href="embedded-rust-training.html">All training details</a>
-                <a class="btn secondary" href="embedded-rust-schulung.html" hreflang="de" lang="de">Deutsche Version</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="page contact-section even">
-        <div class="container">
-
-            <h1>Let's talk</h1>
-
-            <div class="lead">
-                <p>
-                    Whether it's Embedded Linux, Rust adoption, system architecture, testing, security or something that
-                    doesn't fit neatly into a category, I'd be happy to learn more about your project and your team.
-                </p>
-                <p>
-                    Feel free to reach out and introduce yourself. A first conversation is a great way for us to get to
-                    know each other, discuss your situation and see whether we're a good fit and how I can best support
-                    your goals.
-                </p>
-            </div>
-
-            <div class="contact-actions">
-
-                <a href="mailto:marc@luehr.dev" class="card green">
-                    <h3>Email</h3>
-                    <p>marc@luehr.dev</p>
-                </a>
-
-                <a href="https://linkedin.com/in/marcluehr" class="card blue">
-                    <h3>LinkedIn</h3>
-                    <p>Connect or send a message</p>
-                </a>
-
-                <a target="_blank" rel="noopener noreferrer" href="https://zeeg.me/marcluehr/getting-to-know" class="card purple">
-                    <h3>Schedule a call</h3>
-                    <p>Book a short intro meeting</p>
-                </a>
-
-            </div>
-
-        </div>
-    </section>
-
-    <section class="page odd">
-        <div class="container">
-            <h1 class="purple">Services</h1>
-            <div class="grid">
-                <div class="card purple swap">
-                    <div class="header">
-                        <div class="icon">
-                            <i data-lucide="server"></i>
-                        </div>
-                        <h3>Embedded Linux & Yocto</h3>
-                    </div>
-                    <p>Build and maintain robust Linux-based devices.</p>
-                    <ul>
-                        <li>Yocto</li>
-                        <li>BSP Integration</li>
-                        <li>System Architecture</li>
-                        <li>Long-Term Maintenance</li>
-                    </ul>
-                </div>
-
-                <a class="card purple swap" href="embedded-rust-training.html">
-                    <div class="header">
-                        <div class="icon">
-                            <i data-lucide="cpu"></i>
-                        </div>
-                        <h3>Embedded Rust Training & Adoption</h3>
-                    </div>
-                    <p>Introduce Rust successfully into embedded teams.</p>
-                    <ul>
-                        <li>Embedded Rust Training (remote or on-site)</li>
-                        <li>Inhouse Workshops</li>
-                        <li>Mentoring & Code Reviews</li>
-                        <li>Migration Strategies</li>
-                    </ul>
-                    <span class="card-link">Embedded Rust training details →</span>
-                </a>
-
-                <div class="card purple swap">
-                    <div class="header">
-                        <div class="icon">
-                            <i data-lucide="shield-check"></i>
-                        </div>
-                        <h3>Quality & Security</h3>
-                    </div>
-                    <p>Improve reliability, maintainability and security throughout the product lifecycle.</p>
-                    <ul>
-                        <li>Test Automation</li>
-                        <li>Secure Boot</li>
-                        <li>Signed Software Updates</li>
-                        <li>SBOM Generation</li>
-                        <li>CVE Monitoring</li>
-                        <li>Embedded System Hardening</li>
-
-                    </ul>
-                </div>
-            </div>
-            <div class="lead">
-                <p>
-                    Not every problem fits neatly into a category.
-                    Sometimes the best <strong>solution</strong> is simply to sit down, look at it
-                    <strong>together</strong>, and move forward pragmatically.
-                </p>
-            </div>
-        </div>
-    </section>
-    <section class="page even">
-        <h1 class="blue">Engineering Beyond Work</h1>
-        <div class="lead">
-            <p>
-                I've relied on open source software throughout my entire career and strongly prefer open
-                technologies
-                whenever practical.
-
-                Over the years I've built up a growing collection of personal projects, ranging from Rust networking
-                libraries to complete hardware and software systems. These projects allow me to explore new ideas,
-                validate approaches and stay connected to hands-on engineering.
-            </p>
-        </div>
-        <div class="container">
-            <div class="grid">
-                <a href="https://github.com/Th3Link/ipv6-router-advertisement" class="card blue">
-                    <div class="header">
-                        <h3>IPv6 Router Advertisement Crate</h3>
-                    </div>
-                    A Rust implementation for IPv6 Router Advertisement handling, developed with a focus on code
-                    quality,
-                    testing, maintainability and embedded use cases.
-                </a>
-                <a href="https://github.com/Th3Link/homeautomation" class="card blue">
-                    <div class="header">
-                        <h3>Open Home Automation Platform</h3>
-                    </div>
-                    An home automation platform combining custom hardware,
-                    embedded software and system integration.
-
-                    Developed and operated in real-world environments, the project
-                    demonstrates scalable embedded design, long-term maintainability
-                    and cost-efficient deployment.
-                </a>
-                <a href="https://github.com/curvyo/curvyo" class="card blue">
-                    <div class="header">
-                        <h3>Curvyo</h3>
-                    </div>
-                    Draw and produce vector work for laser cutters, plotters, embroidery machines and CNC mills.
-                    Rust and Tauri, targeting Linux, Windows, macOS, Android, iOS and the browser.
-
-                    Developed entirely by AI agents, with me as customer and technical lead: setting the direction,
-                    making technical decisions, specifying precisely, reviewing, testing and reporting bugs.
-                    Spec-driven, with CI/CD done properly.
-                </a>
-            </div>
-        </div>
-        <div class="lead">
-            <p>
-                I don't just advise teams on embedded systems. I build and operate them myself.
-            </p>
-        </div>
-        <div class="container">
-            <a href="https://github.com/th3link">
-                <div class="card github-card blue">
-                    <img id="gh-stats" class="first" alt="GitHub statistics of Th3Link" loading="lazy" />
-                    <img id="gh-langs" class="second" alt="Most used languages on GitHub" loading="lazy" />
-                </div>
-            </a>
-        </div>
-    </section>
-    <section class="page odd">
-        <div class="container">
-            <h1 class="orange">Tools of the Trade</h1>
-            <div class="lead">
-                Technology choices should serve the product, not the other way around.
-
-                Building modern embedded systems requires looking beyond individual technologies. My work regularly
-                spans Linux, firmware, networking, testing, security and the tooling that connects them.
-
-                These are some of the technologies and domains I work with on a regular basis.
-            </div>
-            <div class="grid colorful">
-
-                <div class="card">
-                    <h3>Embedded Systems & Architecture</h3>
-                    <div class="tags">
-                        <span>Embedded Linux</span>
-                        <span>Yocto</span>
-                        <span>System Architecture</span>
-                        <span>Hardware integration</span>
-                        <span>Prototyping</span>
-                        <span>Concept development</span>
-                        <span>systemd</span>
-                        <span>DBus</span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3>Languages</h3>
-                    <div class="tags">
-                        <span>Rust (preferred)</span>
-                        <span>C</span>
-                        <span>C++</span>
-                        <span>Python</span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3>Hardware Understanding</h3>
-                    <div class="tags">
-                        <span>Schematic reading</span>
-                        <span>Board-level understanding</span>
-                        <span>Signal interfaces</span>
-                        <span>Hardware bring-up</span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3>Networking</h3>
-                    <div class="tags">
-                        <span>Linux Networking</span>
-                        <span>TCP/IP</span>
-                        <span>IPv6</span>
-                        <span>MQTT</span>
-                        <span>TLS/SSL</span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3>Interfaces & Protocols</h3>
-                    <div class="tags">
-                        <span>CAN</span>
-                        <span>USB</span>
-                        <span>RS485</span>
-                        <span>Modbus</span>
-                        <span>SPI</span>
-                        <span>I²C</span>
-                        <span>I²S/TDM</span>
-                        <span>UART</span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3>Security & Integrity</h3>
-                    <div class="tags">
-                        <span>Secure Boot</span>
-                        <span>SBOM</span>
-                        <span>CVE Checking</span>
-                        <span>Firmware Integrity</span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3>Testing & Quality</h3>
-                    <div class="tags">
-                        <span>Test Automation</span>
-                        <span>CI/CD</span>
-                        <span>Reproducible builds</span>
-                        <span>Hardware-in-the-Loop</span>
-                        <span>Test Environments</span>
-                        <span>Integration Tests</span>
-                        <span>Failure analysis</span>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-    <footer class="footer">
-
-        <div class="footer-content">
-            <div class="hero">
-                <div class="hero-content">
-                    <div class="hero-image">
-                        <img src="avatar.jpg" alt="" />
-                    </div>
-
-                    <div class="hero-text">
-                        <h2>Marc-Hendric Lühr</h2>
-                        <p><a href="mailto:marc@luehr.dev">marc@luehr.dev</a></p>
-                    </div>
-                </div>
-
-            </div>
-            <div class="footer-columns">
-
-                <div>
-                    <h4>Resources</h4>
-                    <ul>
-                        <li><a href="/imprint.html">Imprint</a></li>
-                        <li><a href="/privacy.html">Privacy</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4>Links</h4>
-                    <ul>
-                        <li><a href="embedded-rust-training.html">Embedded Rust Training</a></li>
-                        <li><a href="embedded-rust-schulung.html" hreflang="de" lang="de">Embedded Rust Schulung</a></li>
-                        <li><a href="https://github.com/Th3Link">GitHub</a></li>
-                        <li><a href="https://blog.luehr.dev">Blog</a></li>
-                        <li><a href="https://linkedin.com/in/marcluehr">LinkedIn</a></li>
-                        <li><a href="https://www.freelancermap.de/profil/software-development-engineer-embedded-systems-software-architect-embedded-linux-und-modern-c">freelancermap</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4>Inspiration</h4>
-                    <ul>
-                        <li><a href="https://github.com/catppuccin">Catppuccin</a></li>
-                        <li><a href="https://tanuki.raskell.io/">Tanuki Theme</a></li>
-                        <li><a href="https://vercel.com/font">Geist Font</a></li>
-                        <li><a href="https://lucide.dev/">Lucide Icons</a></li>
-                    </ul>
-                </div>
-
-            </div>
-
-        </div>
-
-        <h3>Remote across Europe · On-site in Northern and Central Germany</h3>
-        <div class="footer-bottom">
-            <p>© 2026 Marc-Hendric Lühr</p>
-            <a class="seal" rel="nofollow" href="https://www.exali.de/siegel/Marc-Hendric-Luehr_1025" target="_blank"
-                title="Mehr Informationen zur IT-Haftpflicht von Marc-Hendric Lühr"><img
-                    src="https://www.exali.de/siegel/siegel_de-2_07f2738bb10aa323cc1d4edda6984b67.png" width="90"
-                    height="90" loading="lazy" alt="Mehr Informationen zur IT-Haftpflicht von Marc-Hendric Lühr" /></a>
-        </div>
-    </footer>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => lucide.createIcons());
-    </script>
-    <script src="theme.js"></script>
+</nav>
+</div>
+</header>
+<main id="main" tabindex="-1">
+<section class="hero wrap">
+<div>
+<p class="eyebrow">Independent embedded engineer and trainer</p>
+<h1>Embedded Rust training<br> for engineering teams.</h1>
+<p class="intro">Learn Rust through practical development. From the fundamentals to Embedded Linux applications and firmware without the standard library.</p>
+<p>I’m Marc. I build embedded systems and help teams understand Rust and use it in their own projects.</p>
+<div class="actions">
+<a class="button" href="#training">Explore training</a>
+<a class="text-link" href="#contact">Discuss your team’s needs</a>
+</div>
+</div>
+<figure class="portrait">
+<img src="/avatar.jpg" width="640" height="640" alt="Marc-Hendric Lühr, embedded engineer and trainer" fetchpriority="high">
+<figcaption>
+<strong>Marc-Hendric Lühr</strong>
+<span class="personal-note">Just Marc is perfectly fine.</span>
+<span>Embedded Linux · Rust · Firmware</span>
+</figcaption>
+</figure>
+</section>
+<section id="training" class="section wrap">
+<div class="section-heading">
+<p class="eyebrow">01 / Training</p>
+<h2>Find the right training for your team.</h2>
+<p>Three developer trainings and a workshop for technical leaders. In English or German. Dates are arranged individually.</p>
+</div>
+<article class="training-row" id="basics">
+<span class="course-number">01</span>
+<div>
+<p class="eyebrow">For developers getting started with Rust.</p>
+<h3>
+<a class="" href="/rust-basics-training.html">Rust Basics</a>
+</h3>
+<p>Learn Rust from the ground up and apply it in a coherent program. Cover ownership, error handling, testing and cross-compilation.</p>
+<p class="topic-line">Ownership · Traits · Testing · Cross-compilation</p>
+</div>
+<div class="course-meta">
+<strong>3–4 days · from €12,000 plus VAT</strong>
+<p>Remote or on-site · 5–10 participants</p>
+<a class="text-link" href="/rust-basics-training.html">Explore this training →</a>
+</div>
+</article>
+<article class="training-row" id="embedded-linux">
+<span class="course-number">02</span>
+<div>
+<p class="eyebrow">For teams building applications on Linux devices.</p>
+<h3>
+<a class="" href="/rust-embedded-linux-training.html">Rust Advanced: Embedded Linux</a>
+</h3>
+<p>Rust for applications and services on Embedded Linux. Concurrency, D-Bus and web APIs, with testing and a secured build and release pipeline.</p>
+<p class="topic-line">Async Rust · D-Bus · axum · CI/CD</p>
+</div>
+<div class="course-meta">
+<strong>3–4 days · from €12,000 plus VAT</strong>
+<p>Remote or on-site · 5–10 participants</p>
+<a class="text-link" href="/rust-embedded-linux-training.html">Explore this training →</a>
+</div>
+</article>
+<article class="training-row" id="no-std">
+<span class="course-number">03</span>
+<div>
+<p class="eyebrow">For teams developing microcontroller firmware.</p>
+<h3>
+<a class="" href="/rust-no-std-training.html">Rust Advanced: Embedded no_std</a>
+</h3>
+<p>Rust directly on the microcontroller, without the standard library. Work with Embassy, embedded traits, constrained memory and hardware debugging.</p>
+<p class="topic-line">Embassy · embedded-hal · heapless · SWD/JTAG</p>
+</div>
+<div class="course-meta">
+<strong>4 days on-site · €15,000 plus VAT</strong>
+<p>Remote only in exceptional cases.</p>
+<a class="text-link" href="/rust-no-std-training.html">Explore this training →</a>
+</div>
+</article>
+<article class="training-row" id="managers">
+<span class="course-number">04</span>
+<div>
+<p class="eyebrow">For technical leaders evaluating Rust adoption.</p>
+<h3>
+<a class="" href="/rust-for-engineering-managers.html">Rust for Engineering Managers</a>
+</h3>
+<p>A practical introduction to the opportunities, costs and trade-offs of adopting Rust. Evaluate technical constraints and realistic migration strategies.</p>
+<p class="topic-line">Rust vs. C/C++ · Adoption · Migration · Decision criteria</p>
+</div>
+<div class="course-meta">
+<strong>½ day · €500 remote / €700 on-site, plus VAT</strong>
+<p>On-site subject to agreement on location.</p>
+<a class="text-link" href="/rust-for-engineering-managers.html">Explore this training →</a>
+</div>
+</article>
+</section>
+<section class="section tinted">
+<div class="wrap two-column">
+<div>
+<p class="eyebrow">02 / Approach</p>
+<h2>Write the code.<br>Understand the decisions.</h2>
+<p>In developer training, we solve concrete problems. Language concepts and technical explanations follow when they are needed.</p>
+</div>
+<div class="prose">
+<figure class="technical-graphic training-graphic">
+<svg viewBox="0 0 520 206" role="img" aria-labelledby="training-path-title">
+<title id="training-path-title">Developer training paths: Rust Basics as the foundation, followed by Embedded Linux or no_std.</title>
+<g class="diagram-wire">
+<path d="M164 94h55V47h44M219 94v53h44"/>
+<circle cx="219" cy="94" r="4"/>
+</g>
+<g class="diagram-block">
+<rect x="2" y="60" width="162" height="68" rx="5"/>
+<rect x="265" y="14" width="253" height="68" rx="5"/>
+<rect x="265" y="116" width="253" height="68" rx="5"/>
+</g>
+<g class="diagram-label">
+<text x="20" y="89">Rust Basics</text>
+<text x="20" y="110" class="diagram-small">Ownership / Traits</text>
+<text x="283" y="43">Embedded Linux</text>
+<text x="283" y="65" class="diagram-small">std / Async / Services</text>
+<text x="283" y="145">Embedded no_std</text>
+<text x="283" y="167" class="diagram-small">Embassy / HAL / Debugging</text>
+</g>
+</svg>
+<div class="training-map-mobile">
+<div class="training-node">
+<strong>Rust Basics</strong>
+<span>Ownership / Traits</span>
+</div>
+<div class="training-branches">
+<div class="training-node">
+<strong>Embedded Linux</strong>
+<span>std / Async / Services</span>
+</div>
+<div class="training-node">
+<strong>Embedded no_std</strong>
+<span>Embassy / HAL / Debugging</span>
+</div>
+</div>
+</div>
+</figure>
+<h3>A program that grows with you</h3>
+<p>In Rust Basics, we build a small game and extend it with each topic. The advanced trainings build on it. By arrangement, Basics can use a first program from your domain instead.</p>
+<h3>Connected to your work</h3>
+<p>Cross-compilation, tests, debugging and CI/CD are part of the work. We agree on topics and technologies beforehand. My goal is to help your team continue independently.</p>
+<p>Want to evaluate Rust first? The managers workshop covers adoption, effort and decision criteria.</p>
+<a class="text-link" href="/rust-for-engineering-managers.html">Explore the engineering managers workshop</a>
+</div>
+</div>
+</section>
+<section id="engineering" class="section wrap">
+<div class="engineering-intro">
+<div class="section-heading">
+<p class="eyebrow">03 / Engineering</p>
+<h2>Engineering support beyond the training.</h2>
+<p>Embedded Linux, Rust adoption and reliable firmware. I also support teams through coaching, consulting and selected implementation work.</p>
+</div>
+<figure class="technical-graphic hardware-graphic">
+<svg viewBox="0 0 420 270" role="img" aria-labelledby="hardware-title">
+<title id="hardware-title">Schematic embedded board with a processor, firmware, memory and interfaces.</title>
+<rect class="diagram-board" x="24" y="24" width="372" height="222" rx="10"/>
+<g class="diagram-wire">
+<path d="M168 104H91V67M168 117H64v70h38M232 104h47V67M232 117h116v70h-34M181 84V49m14 35V49m14 35V49m14 35V49M181 150v58m14-58v58m14-58v58m14-58v58"/>
+<circle cx="91" cy="67" r="5"/>
+<circle cx="279" cy="67" r="5"/>
+<circle cx="48" cy="44" r="4"/>
+<circle cx="372" cy="44" r="4"/>
+<circle cx="48" cy="226" r="4"/>
+<circle cx="372" cy="226" r="4"/>
+</g>
+<g class="diagram-block">
+<rect x="155" y="84" width="90" height="68" rx="3"/>
+<rect x="102" y="171" width="48" height="30" rx="2"/>
+<rect x="265" y="171" width="48" height="30" rx="2"/>
+</g>
+<g class="diagram-label">
+<text x="171" y="111">CPU</text>
+<text x="171" y="133" class="diagram-small">Firmware</text>
+<text x="109" y="191" class="diagram-small">I²C</text>
+<text x="273" y="191" class="diagram-small">CAN</text>
+<text x="105" y="72" class="diagram-small">SWD / JTAG</text>
+<text x="290" y="63" class="diagram-small">Memory</text>
+<text x="70" y="231" class="diagram-small">From hardware to software.</text>
+</g>
+</svg>
+</figure>
+</div>
+<div class="services-grid">
+<article>
+<h3>Embedded Linux &amp; Yocto</h3>
+<p>Build and maintain robust Linux-based devices.</p>
+<ul>
+<li>Yocto</li>
+<li>BSP Integration</li>
+<li>System Architecture</li>
+<li>Long-Term Maintenance</li>
+</ul>
+</article>
+<article>
+<h3>Embedded Rust Training &amp; Adoption</h3>
+<p>Introduce Rust successfully into embedded teams.</p>
+<ul>
+<li>Embedded Rust Training (remote or on-site)</li>
+<li>Inhouse Workshops</li>
+<li>Mentoring &amp; Code Reviews</li>
+<li>Migration Strategies</li>
+</ul>
+<a class="text-link" href="/embedded-rust-training.html">Embedded Rust training details →</a>
+</article>
+<article>
+<h3>Quality &amp; Security</h3>
+<p>Improve reliability, maintainability and security throughout the product lifecycle.</p>
+<ul>
+<li>Test Automation</li>
+<li>Secure Boot</li>
+<li>Signed Software Updates</li>
+<li>SBOM Generation</li>
+<li>CVE Monitoring</li>
+<li>Embedded System Hardening</li>
+</ul>
+</article>
+<article>
+<h3>Coaching</h3>
+<p>Help your team build expertise and confidence in modern embedded development.</p>
+<ul>
+<li>Workshops</li>
+<li>Team Mentoring</li>
+<li>Code Reviews</li>
+<li>Pair Programming</li>
+</ul>
+</article>
+<article>
+<h3>Consulting</h3>
+<p>Technical guidance for architecture decisions, technology adoption and complex engineering challenges.</p>
+<ul>
+<li>Architecture Reviews</li>
+<li>Technical Strategy</li>
+<li>Technology Evaluation</li>
+<li>Project Guidance</li>
+</ul>
+</article>
+<article>
+<h3>Implementation</h3>
+<p>Selective hands-on implementation for prototypes, critical components and challenging engineering tasks.</p>
+<ul>
+<li>Architecture redesigns</li>
+<li>Proof of Concepts</li>
+<li>Technology transitions</li>
+<li>Temporary engineering support</li>
+</ul>
+</article>
+</div>
+<div class="engineering-note">
+<p>Not every problem fits neatly into a category. Sometimes the best solution is simply to sit down, look at it together, and move forward pragmatically.</p>
+<p>Most engagements are fully remote, but I also enjoy working directly with teams on-site. I regularly travel throughout Northern and Central Germany and am happy to discuss other locations when it makes sense.</p>
+<a class="text-link" href="#contact">Discuss your project</a>
+</div>
+</section>
+<section id="expertise" class="section tinted">
+<div class="wrap">
+<div class="section-heading">
+<p class="eyebrow">Technologies & domains</p>
+<h2>Tools of the Trade</h2>
+<p>Technology choices should serve the product, not the other way around. Building modern embedded systems requires looking beyond individual technologies. My work regularly spans Linux, firmware, networking, testing, security and the tooling that connects them. These are some of the technologies and domains I work with on a regular basis.</p>
+</div>
+<div class="expertise-grid">
+<article>
+<h3>Embedded Systems &amp; Architecture</h3>
+<ul>
+<li>Embedded Linux</li>
+<li>Yocto</li>
+<li>System Architecture</li>
+<li>Hardware integration</li>
+<li>Prototyping</li>
+<li>Concept development</li>
+<li>systemd</li>
+<li>D-Bus</li>
+</ul>
+</article>
+<article>
+<h3>Languages</h3>
+<ul>
+<li>Rust (preferred)</li>
+<li>Go</li>
+<li>C</li>
+<li>C++</li>
+<li>Python</li>
+</ul>
+</article>
+<article>
+<h3>Hardware Understanding</h3>
+<ul>
+<li>Schematic reading</li>
+<li>Board-level understanding</li>
+<li>Signal interfaces</li>
+<li>Hardware bring-up</li>
+</ul>
+</article>
+<article>
+<h3>Networking</h3>
+<ul>
+<li>Linux Networking</li>
+<li>TCP/IP</li>
+<li>IPv6</li>
+<li>MQTT</li>
+<li>TLS/SSL</li>
+</ul>
+</article>
+<article>
+<h3>Interfaces &amp; Protocols</h3>
+<ul>
+<li>CAN</li>
+<li>USB</li>
+<li>RS485</li>
+<li>Modbus</li>
+<li>SPI</li>
+<li>I²C</li>
+<li>I²S/TDM</li>
+<li>UART</li>
+</ul>
+</article>
+<article>
+<h3>Security &amp; Integrity</h3>
+<ul>
+<li>Secure Boot</li>
+<li>Secure firmware / OTA updates</li>
+<li>SBOM</li>
+<li>CVE Checking</li>
+<li>Firmware Integrity</li>
+</ul>
+</article>
+<article>
+<h3>Testing &amp; Quality</h3>
+<ul>
+<li>Test Automation</li>
+<li>CI/CD</li>
+<li>Reproducible builds</li>
+<li>Hardware-in-the-Loop</li>
+<li>Test Environments</li>
+<li>Integration Tests</li>
+<li>Failure analysis</li>
+</ul>
+</article>
+</div>
+</div>
+</section>
+<section id="about" class="section wrap">
+<div class="two-column">
+<div>
+<p class="eyebrow">04 / About</p>
+<h2>I work on these<br>problems myself.</h2>
+</div>
+<div class="prose">
+<p>I’ve relied on open source software throughout my entire career and strongly prefer open technologies whenever practical. My personal projects range from Rust networking libraries to complete hardware and software systems. They let me explore ideas, validate approaches and stay connected to hands-on engineering.</p>
+<p>Technologies change. Sound engineering practices and teams that can work independently remain valuable.</p>
+</div>
+</div>
+<div class="projects">
+<article id="ipv6-router-advertisement">
+<span class="eyebrow">Rust / Networking</span>
+<h3>
+<a class="" href="https://github.com/Th3Link/ipv6-router-advertisement">IPv6 Router Advertisement</a>
+</h3>
+<p>A Rust implementation for IPv6 Router Advertisement handling, developed with a focus on code quality, testing, maintainability and embedded use cases.</p>
+</article>
+<article id="homeautomation">
+<span class="eyebrow">Hardware / Firmware / Linux</span>
+<h3>
+<a class="" href="https://github.com/Th3Link/homeautomation">Homeautomation</a>
+</h3>
+<p>An open home automation platform combining custom hardware, embedded software and system integration. Developed and operated in real-world environments, the project demonstrates scalable embedded design, long-term maintainability and cost-efficient deployment.</p>
+</article>
+<article id="curvyo">
+<span class="eyebrow">Rust / Tauri / Vector tools</span>
+<h3>
+<a class="" href="https://github.com/curvyo/curvyo">Curvyo</a>
+</h3>
+<p>Draw and produce vector work for laser cutters, plotters, embroidery machines and CNC mills. Rust and Tauri, targeting Linux, Windows, macOS, Android, iOS and the browser.</p>
+<p>Developed entirely by AI agents, with me as customer and technical lead: setting the direction, making technical decisions, specifying precisely, reviewing, testing and reporting bugs. Spec-driven, with CI/CD done properly.</p>
+</article>
+</div>
+<p class="personal-statement">I don’t just advise teams on embedded systems. I build and operate them myself.</p>
+</section>
+<section id="contact" class="contact-band">
+<div class="wrap contact-layout">
+<div>
+<p class="eyebrow">Contact</p>
+<h2>Let’s plan your team’s Rust training.</h2>
+<p>What does your team already know, and what are you building? Send me an email or book an introductory call.</p>
+</div>
+<div>
+<div class="actions">
+<a class="button" href="mailto:marc@luehr.dev?subject=Rust%20team%20training%20inquiry">Discuss your team’s training</a>
+<a class="text-link" href="https://zeeg.me/marcluehr/getting-to-know">Book an intro call</a>
+</div>
+<a class="email" href="mailto:marc@luehr.dev">marc@luehr.dev</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="site-footer wrap">
+<div>
+<strong>Marc-Hendric Lühr</strong>
+<p>Remote across Europe · On-site by arrangement</p>
+</div>
+<nav aria-label="Further links">
+<a class="" href="/imprint.html">Imprint</a>
+<a class="" href="/privacy.html">Privacy</a>
+<a class="" href="https://github.com/Th3Link">GitHub</a>
+<a class="" href="https://linkedin.com/in/marcluehr">LinkedIn</a>
+<a class="" href="https://blog.luehr.dev/">Blog</a>
+<a class="" href="https://www.exali.de/siegel/Marc-Hendric-Luehr_1025">Professional liability insurance</a>
+</nav>
+<small>© Marc-Hendric Lühr · IBM Plex · <a href="/assets/fonts/OFL.txt">SIL Open Font License</a>
+</small>
+</footer>
 </body>
-
 </html>
