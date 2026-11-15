@@ -34,7 +34,7 @@ jobs:
         run: |
           mkdir _site
           cp ./*.html style.css theme.js robots.txt sitemap.xml avatar.jpg favicon.svg _site/
-          cp -R assets de _site/
+          cp -R assets de projects _site/
           touch _site/.nojekyll
 
       - uses: actions/configure-pages@v5

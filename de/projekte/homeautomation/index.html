@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hausautomation von der Platine bis zur Integration | Marc-Hendric Lühr</title>
+<meta name="description" content="Ein offenes Hausautomationssystem mit eigener Hardware, Rust-Firmware und einem Gateway zwischen CAN-Bus und MQTT.">
+<link rel="canonical" href="https://luehr.dev/de/projekte/homeautomation/">
+<link rel="alternate" hreflang="de" href="https://luehr.dev/de/projekte/homeautomation/">
+<link rel="alternate" hreflang="en" href="https://luehr.dev/projects/homeautomation/">
+<link rel="alternate" hreflang="x-default" href="https://luehr.dev/projects/homeautomation/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="luehr.dev">
+<meta property="og:title" content="Hausautomation von der Platine bis zur Integration | Marc-Hendric Lühr">
+<meta property="og:description" content="Ein offenes Hausautomationssystem mit eigener Hardware, Rust-Firmware und einem Gateway zwischen CAN-Bus und MQTT.">
+<meta property="og:url" content="https://luehr.dev/de/projekte/homeautomation/">
+<meta property="og:image" content="https://luehr.dev/avatar.jpg">
+<meta property="og:image:alt" content="Marc-Hendric Lühr">
+<meta property="og:locale" content="de_DE">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/IBMPlexSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/style.css?v=9f1e875aa7">
+<script src="/theme.js?v=2d0c62b5f7">
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Person", "@id": "https://luehr.dev/#person", "name": "Marc-Hendric Lühr", "url": "https://luehr.dev/", "image": "https://luehr.dev/avatar.jpg", "jobTitle": "Embedded Engineer & Trainer", "sameAs": ["https://github.com/Th3Link", "https://linkedin.com/in/marcluehr"]}, {"@type": "WebSite", "@id": "https://luehr.dev/#website", "url": "https://luehr.dev/", "name": "luehr.dev", "inLanguage": ["de", "en"]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://luehr.dev/de/"}, {"@type": "ListItem", "position": 2, "name": "Homeautomation", "item": "https://luehr.dev/de/projekte/homeautomation/"}]}, {"@type": "TechArticle", "headline": "Hausautomation von der Platine bis zur Integration", "description": "Ein offenes Hausautomationssystem mit eigener Hardware, Rust-Firmware und einem Gateway zwischen CAN-Bus und MQTT.", "url": "https://luehr.dev/de/projekte/homeautomation/", "mainEntityOfPage": "https://luehr.dev/de/projekte/homeautomation/", "inLanguage": "de", "author": {"@id": "https://luehr.dev/#person"}, "citation": ["https://github.com/Th3Link/homeautomation"], "dateModified": "2026-11-15"}]}</script>
+</head>
+<body data-auto-language="false">
+<a class="skip-link" href="#main">Zum Inhalt</a>
+<header class="site-header wrap">
+<a class="wordmark" href="/de/">Marc-Hendric Lühr<span>Embedded engineering &amp; training</span>
+</a>
+<nav aria-label="Hauptnavigation">
+<a class="" href="/de/#training">Trainings</a>
+<a class="" href="/de/#engineering">Engineering</a>
+<a class="" href="/de/#about">Über mich</a>
+<a class="" href="/de/#contact">Kontakt</a>
+</nav>
+<div class="preferences">
+<nav class="language-switch" aria-label="Sprache">
+<a href="/de/projekte/homeautomation/" lang="de" hreflang="de" data-language="de" aria-current="page">Deutsch</a>
+<a href="/projects/homeautomation/" lang="en" hreflang="en" data-language="en">English</a>
+</nav>
+<button id="theme-toggle" type="button" aria-label="Farbschema wechseln" aria-pressed="false">
+<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+<circle cx="12" cy="12" r="4"/>
+<path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/>
+</svg>
+</button>
+</div>
+</header>
+<main id="main" tabindex="-1">
+<section class="course-hero wrap">
+<nav class="breadcrumbs" aria-label="Brotkrumennavigation">
+<a class="" href="/de/">Startseite</a>
+<span>/</span>
+<a class="" href="/de/#about">Eigene Projekte</a>
+</nav>
+<p class="eyebrow">Projekteinblick / Homeautomation</p>
+<h1>Hausautomation von der Platine bis zur Integration</h1>
+<p class="intro">Ein offenes Hausautomationssystem mit eigener Hardware, Rust-Firmware und einem Gateway zwischen CAN-Bus und MQTT.</p>
+<p class="project-date">Projektstand geprüft am 15. November 2026</p>
+</section>
+<figure class="wrap project-flow">
+<figcaption>Der Ansatz im Überblick</figcaption>
+<ol>
+<li>
+<strong>CAN-Knoten</strong>
+<span>Relais, Taster, Sensoren</span>
+</li>
+<li>
+<strong>Gateway</strong>
+<span>ESP32 / Rust / Embassy</span>
+</li>
+<li>
+<strong>MQTT</strong>
+<span>Über Ethernet</span>
+</li>
+<li>
+<strong>Integration</strong>
+<span>openHAB / Home Assistant</span>
+</li>
+</ol>
+</figure>
+<div class="wrap course-layout">
+<aside class="course-facts">
+<h2>Auf einen Blick</h2>
+<dl class="facts">
+<div>
+<dt>Meine Rolle</dt>
+<dd>Eigenes Hausautomationsprojekt: Hardware, Embedded-Software, Systemintegration und Betrieb.</dd>
+</div>
+<div>
+<dt>Stack</dt>
+<dd>Rust · no_std · Embassy · ESP32 · CAN · MQTT · KiCad</dd>
+</div>
+<div>
+<dt>Stand</dt>
+<dd>Eigenes, betriebenes Hausautomationsprojekt mit öffentlich zugänglicher Hardware und Firmware; experimentelle Komponenten.</dd>
+</div>
+</dl>
+<a class="text-link" href="https://github.com/Th3Link/homeautomation">Repository ansehen →</a>
+</aside>
+<div class="course-content">
+<section>
+<h2>Die Aufgabe</h2>
+<p>Relais, Rollläden, Licht, Taster und Sensoren sollen zusammenarbeiten. Dafür braucht es nicht nur Firmware auf einer Platine, sondern ein gemeinsames Protokoll, ein Gateway und die Anbindung an die Hausautomation. Das System muss auch nach der ersten Inbetriebnahme verständlich und veränderbar bleiben.</p>
+</section>
+<section>
+<h2>Mein Beitrag</h2>
+<p>In diesem eigenen Projekt verbinde ich Hardware, Firmware und Systemintegration und betreibe die Hausautomation selbst. Das Repository enthält KiCad-Projekte, Gehäuse für den 3D-Druck, Protokolldokumentation und Software. Hardware und Software lassen sich damit gemeinsam betrachten.</p>
+</section>
+<section>
+<h2>Die Architekturentscheidung</h2>
+<p>Die Komponenten kommunizieren über CAN. Ein ESP32-Gateway übersetzt zwischen CAN und MQTT und nutzt kabelgebundenes Ethernet. Die Rust-Firmware arbeitet ohne Standardbibliothek mit Embassy. Hardwareunabhängige Core-Crates sind von der ESP32-Anbindung getrennt; so lässt sich Logik auf dem Entwicklungsrechner testen.</p>
+</section>
+<section>
+<h2>Testen und aktualisieren</h2>
+<p>Das Repository dokumentiert OTA-Updates für Gateway und CAN-Knoten sowie eine QEMU-Simulation mit virtuellen CAN-Bussen. Dazu kommen Formatierung, Clippy, Tests mit Coverage und Abhängigkeitsprüfungen in CI. Die frühere C++/ESP-IDF-Implementierung bleibt als Referenz erhalten.</p>
+</section>
+<section>
+<h2>Stand und Grenzen</h2>
+<p>Das Projekt ist offen dokumentierte, experimentelle Hardware und Firmware. Es ist kein fertig zertifiziertes Installationsprodukt. Die README weist besonders bei Netzspannung auf die nötige Fachkenntnis hin; einzelne Hardware-Dokumentationen sind noch in Arbeit.</p>
+</section>
+<section>
+<h2>Der Bezug zur Teamarbeit</h2>
+<p>Hier wird sichtbar, warum Firmware, Schnittstellen, Tests und Updatefähigkeit zusammengehören. Für Teams mit Mikrocontrollern bietet das no_std-Training den passenden Einstieg; die Systemintegration verbindet diese Arbeit mit Anwendungen und Diensten auf Linux.</p>
+</section>
+<section>
+<h2>Quellen & Projektstand</h2>
+<p>Die Beschreibung folgt dem öffentlich dokumentierten Projektstand zum oben genannten Datum. Den aktuellen Stand findet ihr im Repository.</p>
+<ul>
+<li>
+<a class="" href="https://github.com/Th3Link/homeautomation">Quellcode &amp; README</a>
+</li>
+</ul>
+</section>
+<section>
+<h2>Passende Trainings</h2>
+<nav class="related" aria-label="Passende Trainings">
+<a class="" href="/rust-embedded-linux-schulung.html">Rust Advanced: Embedded Linux →</a>
+<a class="" href="/rust-no-std-schulung.html">Rust Advanced: Embedded no_std →</a>
+</nav>
+</section>
+<section>
+<h2>Weitere eigene Projekte</h2>
+<nav class="related" aria-label="Weitere Projekte">
+<a class="" href="/de/projekte/ipv6-router-advertisement/">IPv6 Router Advertisement →</a>
+<a class="" href="/de/projekte/curvyo/">Curvyo →</a>
+</nav>
+</section>
+</div>
+</div>
+</main>
+<footer class="site-footer wrap">
+<div>
+<strong>Marc-Hendric Lühr</strong>
+<p>Remote in Europa · Vor Ort nach Absprache</p>
+</div>
+<nav aria-label="Weitere Links">
+<a class="" href="/impressum.html">Impressum</a>
+<a class="" href="/datenschutz.html">Datenschutz</a>
+<a class="" href="https://github.com/Th3Link">GitHub</a>
+<a class="" href="https://linkedin.com/in/marcluehr">LinkedIn</a>
+<a class="" href="https://blog.luehr.dev/">Blog</a>
+<a class="" href="https://www.exali.de/siegel/Marc-Hendric-Luehr_1025">Berufshaftpflicht</a>
+</nav>
+<small>© Marc-Hendric Lühr · IBM Plex · <a href="/assets/fonts/OFL.txt">SIL Open Font License</a>
+</small>
+</footer>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IPv6 Router Advertisements mit Rust verarbeiten | Marc-Hendric Lühr</title>
+<meta name="description" content="Eine Linux-Bibliothek, die Router Advertisements empfängt, Lebenszeiten verfolgt und vollständige Zustandsänderungen pro Netzwerkschnittstelle liefert.">
+<link rel="canonical" href="https://luehr.dev/de/projekte/ipv6-router-advertisement/">
+<link rel="alternate" hreflang="de" href="https://luehr.dev/de/projekte/ipv6-router-advertisement/">
+<link rel="alternate" hreflang="en" href="https://luehr.dev/projects/ipv6-router-advertisement/">
+<link rel="alternate" hreflang="x-default" href="https://luehr.dev/projects/ipv6-router-advertisement/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="luehr.dev">
+<meta property="og:title" content="IPv6 Router Advertisements mit Rust verarbeiten | Marc-Hendric Lühr">
+<meta property="og:description" content="Eine Linux-Bibliothek, die Router Advertisements empfängt, Lebenszeiten verfolgt und vollständige Zustandsänderungen pro Netzwerkschnittstelle liefert.">
+<meta property="og:url" content="https://luehr.dev/de/projekte/ipv6-router-advertisement/">
+<meta property="og:image" content="https://luehr.dev/avatar.jpg">
+<meta property="og:image:alt" content="Marc-Hendric Lühr">
+<meta property="og:locale" content="de_DE">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/IBMPlexSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/style.css?v=9f1e875aa7">
+<script src="/theme.js?v=2d0c62b5f7">
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Person", "@id": "https://luehr.dev/#person", "name": "Marc-Hendric Lühr", "url": "https://luehr.dev/", "image": "https://luehr.dev/avatar.jpg", "jobTitle": "Embedded Engineer & Trainer", "sameAs": ["https://github.com/Th3Link", "https://linkedin.com/in/marcluehr"]}, {"@type": "WebSite", "@id": "https://luehr.dev/#website", "url": "https://luehr.dev/", "name": "luehr.dev", "inLanguage": ["de", "en"]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://luehr.dev/de/"}, {"@type": "ListItem", "position": 2, "name": "IPv6 Router Advertisement", "item": "https://luehr.dev/de/projekte/ipv6-router-advertisement/"}]}, {"@type": "TechArticle", "headline": "IPv6 Router Advertisements mit Rust verarbeiten", "description": "Eine Linux-Bibliothek, die Router Advertisements empfängt, Lebenszeiten verfolgt und vollständige Zustandsänderungen pro Netzwerkschnittstelle liefert.", "url": "https://luehr.dev/de/projekte/ipv6-router-advertisement/", "mainEntityOfPage": "https://luehr.dev/de/projekte/ipv6-router-advertisement/", "inLanguage": "de", "author": {"@id": "https://luehr.dev/#person"}, "citation": ["https://github.com/Th3Link/ipv6-router-advertisement", "https://docs.rs/ipv6-router-advertisement"], "dateModified": "2026-11-15"}]}</script>
+</head>
+<body data-auto-language="false">
+<a class="skip-link" href="#main">Zum Inhalt</a>
+<header class="site-header wrap">
+<a class="wordmark" href="/de/">Marc-Hendric Lühr<span>Embedded engineering &amp; training</span>
+</a>
+<nav aria-label="Hauptnavigation">
+<a class="" href="/de/#training">Trainings</a>
+<a class="" href="/de/#engineering">Engineering</a>
+<a class="" href="/de/#about">Über mich</a>
+<a class="" href="/de/#contact">Kontakt</a>
+</nav>
+<div class="preferences">
+<nav class="language-switch" aria-label="Sprache">
+<a href="/de/projekte/ipv6-router-advertisement/" lang="de" hreflang="de" data-language="de" aria-current="page">Deutsch</a>
+<a href="/projects/ipv6-router-advertisement/" lang="en" hreflang="en" data-language="en">English</a>
+</nav>
+<button id="theme-toggle" type="button" aria-label="Farbschema wechseln" aria-pressed="false">
+<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+<circle cx="12" cy="12" r="4"/>
+<path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/>
+</svg>
+</button>
+</div>
+</header>
+<main id="main" tabindex="-1">
+<section class="course-hero wrap">
+<nav class="breadcrumbs" aria-label="Brotkrumennavigation">
+<a class="" href="/de/">Startseite</a>
+<span>/</span>
+<a class="" href="/de/#about">Eigene Projekte</a>
+</nav>
+<p class="eyebrow">Projekteinblick / IPv6 Router Advertisement</p>
+<h1>IPv6 Router Advertisements mit Rust verarbeiten</h1>
+<p class="intro">Eine Linux-Bibliothek, die Router Advertisements empfängt, Lebenszeiten verfolgt und vollständige Zustandsänderungen pro Netzwerkschnittstelle liefert.</p>
+<p class="project-date">Projektstand geprüft am 15. November 2026</p>
+</section>
+<figure class="wrap project-flow">
+<figcaption>Der Ansatz im Überblick</figcaption>
+<ol>
+<li>
+<strong>ICMPv6</strong>
+<span>Router Advertisements</span>
+</li>
+<li>
+<strong>Parser &amp; Lebenszeiten</strong>
+<span>DNS, Präfixe, Flags</span>
+</li>
+<li>
+<strong>Aggregation</strong>
+<span>Zustand pro Interface</span>
+</li>
+<li>
+<strong>Anwendung</strong>
+<span>Eigene Netzwerklogik</span>
+</li>
+</ol>
+</figure>
+<div class="wrap course-layout">
+<aside class="course-facts">
+<h2>Auf einen Blick</h2>
+<dl class="facts">
+<div>
+<dt>Meine Rolle</dt>
+<dd>Eigenes Open-Source-Projekt: Rust-Netzwerkbibliothek, Architektur und Tests.</dd>
+</div>
+<div>
+<dt>Stack</dt>
+<dd>Rust · Linux · ICMPv6 · Tokio</dd>
+</div>
+<div>
+<dt>Stand</dt>
+<dd>Öffentliche Rust-Crate für Linux; eine Bibliothek zur Verarbeitung von Netzwerkdaten, kein vollständiger Netzwerkmanager.</dd>
+</div>
+</dl>
+<a class="text-link" href="https://github.com/Th3Link/ipv6-router-advertisement">Repository ansehen →</a>
+</aside>
+<div class="course-content">
+<section>
+<h2>Die Aufgabe</h2>
+<p>Eine eigene Netzwerkverwaltung braucht mehr als ein empfangenes Paket: Welche DNS-Server und Präfixe gelten noch? Was passiert, wenn mehrere Router Informationen liefern oder deren Lebenszeiten ablaufen? Dafür müssen Protokolldaten über Zeit zu einem konsistenten Zustand zusammengeführt werden.</p>
+</section>
+<section>
+<h2>Mein Beitrag</h2>
+<p>Ich entwickle diese Rust-Bibliothek als Baustein für Netzwerkmanager und Embedded-Systeme. Sie verarbeitet Router Advertisements unter Linux und stellt Änderungen als asynchronen Event-Stream bereit. Die Anwendung darüber entscheidet, was sie mit diesen Informationen macht.</p>
+</section>
+<section>
+<h2>Die Architekturentscheidung</h2>
+<p>Empfang, Parsing, Lebenszeiten und Aggregation sind getrennte Schichten. Änderungen liefern vollständige Zustände statt einzelner, schwer zusammenzusetzender Paketfragmente. Die Bibliothek setzt selbst keine Adressen oder Routen und startet keinen DHCPv6-Client. So bleibt die Konfigurationsentscheidung bei der Anwendung.</p>
+</section>
+<section>
+<h2>Was im Repository nachvollziehbar ist</h2>
+<p>Die README beschreibt DNS-Optionen (RDNSS/DNSSL), Präfixinformationen und Router-Flags sowie Ablaufereignisse. Die Teststrategie umfasst Unit-Tests, Integrationstests mit simulierten ICMPv6-Sockets und die Wiedergabe aufgezeichneter Router Advertisements. Code, Beispiele und Tests sind öffentlich einsehbar.</p>
+</section>
+<section>
+<h2>Der Bezug zur Teamarbeit</h2>
+<p>Hier kommen die Themen zusammen, die auch bei Linux-Diensten relevant sind: asynchrone Verarbeitung, klar abgegrenzter Zustand, explizite Zeitabhängigkeiten und Tests für Randfälle. Genau solche Entscheidungen lassen sich im Embedded-Linux-Training an eurem Kontext besprechen.</p>
+</section>
+<section>
+<h2>Quellen & Projektstand</h2>
+<p>Die Beschreibung folgt dem öffentlich dokumentierten Projektstand zum oben genannten Datum. Den aktuellen Stand findet ihr im Repository.</p>
+<ul>
+<li>
+<a class="" href="https://github.com/Th3Link/ipv6-router-advertisement">Quellcode &amp; README</a>
+</li>
+<li>
+<a class="" href="https://docs.rs/ipv6-router-advertisement">API-Dokumentation</a>
+</li>
+</ul>
+</section>
+<section>
+<h2>Passende Trainings</h2>
+<nav class="related" aria-label="Passende Trainings">
+<a class="" href="/rust-embedded-linux-schulung.html">Rust Advanced: Embedded Linux →</a>
+</nav>
+</section>
+<section>
+<h2>Weitere eigene Projekte</h2>
+<nav class="related" aria-label="Weitere Projekte">
+<a class="" href="/de/projekte/homeautomation/">Homeautomation →</a>
+<a class="" href="/de/projekte/curvyo/">Curvyo →</a>
+</nav>
+</section>
+</div>
+</div>
+</main>
+<footer class="site-footer wrap">
+<div>
+<strong>Marc-Hendric Lühr</strong>
+<p>Remote in Europa · Vor Ort nach Absprache</p>
+</div>
+<nav aria-label="Weitere Links">
+<a class="" href="/impressum.html">Impressum</a>
+<a class="" href="/datenschutz.html">Datenschutz</a>
+<a class="" href="https://github.com/Th3Link">GitHub</a>
+<a class="" href="https://linkedin.com/in/marcluehr">LinkedIn</a>
+<a class="" href="https://blog.luehr.dev/">Blog</a>
+<a class="" href="https://www.exali.de/siegel/Marc-Hendric-Luehr_1025">Berufshaftpflicht</a>
+</nav>
+<small>© Marc-Hendric Lühr · IBM Plex · <a href="/assets/fonts/OFL.txt">SIL Open Font License</a>
+</small>
+</footer>
+</body>
+</html>

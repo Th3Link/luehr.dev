@@ -1,0 +1,111 @@
+[
+  {
+    "key": "ipv6-router-advertisement",
+    "name": "IPv6 Router Advertisement",
+    "stack": "Rust · Linux · ICMPv6 · Tokio",
+    "repo": "https://github.com/Th3Link/ipv6-router-advertisement",
+    "courses": ["embedded-linux"],
+    "de": {
+      "title": "IPv6 Router Advertisements mit Rust verarbeiten",
+      "summary": "Eine Linux-Bibliothek, die Router Advertisements empfängt, Lebenszeiten verfolgt und vollständige Zustandsänderungen pro Netzwerkschnittstelle liefert.",
+      "role": "Eigenes Open-Source-Projekt: Rust-Netzwerkbibliothek, Architektur und Tests.",
+      "diagram": [["ICMPv6", "Router Advertisements"], ["Parser & Lebenszeiten", "DNS, Präfixe, Flags"], ["Aggregation", "Zustand pro Interface"], ["Anwendung", "Eigene Netzwerklogik"]],
+      "sections": [
+        ["Die Aufgabe", "Eine eigene Netzwerkverwaltung braucht mehr als ein empfangenes Paket: Welche DNS-Server und Präfixe gelten noch? Was passiert, wenn mehrere Router Informationen liefern oder deren Lebenszeiten ablaufen? Dafür müssen Protokolldaten über Zeit zu einem konsistenten Zustand zusammengeführt werden."],
+        ["Mein Beitrag", "Ich entwickle diese Rust-Bibliothek als Baustein für Netzwerkmanager und Embedded-Systeme. Sie verarbeitet Router Advertisements unter Linux und stellt Änderungen als asynchronen Event-Stream bereit. Die Anwendung darüber entscheidet, was sie mit diesen Informationen macht."],
+        ["Die Architekturentscheidung", "Empfang, Parsing, Lebenszeiten und Aggregation sind getrennte Schichten. Änderungen liefern vollständige Zustände statt einzelner, schwer zusammenzusetzender Paketfragmente. Die Bibliothek setzt selbst keine Adressen oder Routen und startet keinen DHCPv6-Client. So bleibt die Konfigurationsentscheidung bei der Anwendung."],
+        ["Was im Repository nachvollziehbar ist", "Die README beschreibt DNS-Optionen (RDNSS/DNSSL), Präfixinformationen und Router-Flags sowie Ablaufereignisse. Die Teststrategie umfasst Unit-Tests, Integrationstests mit simulierten ICMPv6-Sockets und die Wiedergabe aufgezeichneter Router Advertisements. Code, Beispiele und Tests sind öffentlich einsehbar."],
+        ["Der Bezug zur Teamarbeit", "Hier kommen die Themen zusammen, die auch bei Linux-Diensten relevant sind: asynchrone Verarbeitung, klar abgegrenzter Zustand, explizite Zeitabhängigkeiten und Tests für Randfälle. Genau solche Entscheidungen lassen sich im Embedded-Linux-Training an eurem Kontext besprechen."]
+      ],
+      "status": "Öffentliche Rust-Crate für Linux; eine Bibliothek zur Verarbeitung von Netzwerkdaten, kein vollständiger Netzwerkmanager."
+    },
+    "en": {
+      "title": "Processing IPv6 Router Advertisements in Rust",
+      "summary": "A Linux library that receives Router Advertisements, tracks lifetimes and emits complete state changes for each network interface.",
+      "role": "My own open-source project: Rust networking library, architecture and tests.",
+      "diagram": [["ICMPv6", "Router Advertisements"], ["Parser & lifetimes", "DNS, prefixes, flags"], ["Aggregation", "State per interface"], ["Application", "Your network policy"]],
+      "sections": [
+        ["The problem", "Custom network management needs more than a received packet. Which DNS servers and prefixes are still valid? What happens when several routers advertise information, or when their lifetimes expire? Protocol data needs to be combined into consistent state over time."],
+        ["My contribution", "I develop this Rust library as a building block for network managers and embedded systems. It processes Router Advertisements on Linux and exposes changes through an asynchronous event stream. The application above it decides what to do with that information."],
+        ["The architecture decision", "Reception, parsing, lifetimes and aggregation are separate layers. Changes emit complete state rather than individual packet fragments that callers need to assemble. The library does not configure addresses or routes, or start a DHCPv6 client. Configuration policy stays with the application."],
+        ["What you can inspect", "The README describes DNS options (RDNSS/DNSSL), prefix information, router flags and expiry events. The testing strategy covers unit tests, integration tests with mock ICMPv6 sockets and replaying captured Router Advertisements. Code, examples and tests are public."],
+        ["How this connects to team development", "The same concerns appear in Linux services: asynchronous processing, explicit state boundaries, time dependencies and tests for edge cases. These are decisions we can discuss in the context of your project during Embedded Linux training."]
+      ],
+      "status": "Public Rust crate for Linux; a network-data processing library rather than a complete network manager."
+    }
+  },
+  {
+    "key": "homeautomation",
+    "name": "Homeautomation",
+    "stack": "Rust · no_std · Embassy · ESP32 · CAN · MQTT · KiCad",
+    "repo": "https://github.com/Th3Link/homeautomation",
+    "courses": ["no-std", "embedded-linux"],
+    "de": {
+      "title": "Hausautomation von der Platine bis zur Integration",
+      "summary": "Ein offenes Hausautomationssystem mit eigener Hardware, Rust-Firmware und einem Gateway zwischen CAN-Bus und MQTT.",
+      "role": "Eigenes Hausautomationsprojekt: Hardware, Embedded-Software, Systemintegration und Betrieb.",
+      "diagram": [["CAN-Knoten", "Relais, Taster, Sensoren"], ["Gateway", "ESP32 / Rust / Embassy"], ["MQTT", "Über Ethernet"], ["Integration", "openHAB / Home Assistant"]],
+      "sections": [
+        ["Die Aufgabe", "Relais, Rollläden, Licht, Taster und Sensoren sollen zusammenarbeiten. Dafür braucht es nicht nur Firmware auf einer Platine, sondern ein gemeinsames Protokoll, ein Gateway und die Anbindung an die Hausautomation. Das System muss auch nach der ersten Inbetriebnahme verständlich und veränderbar bleiben."],
+        ["Mein Beitrag", "In diesem eigenen Projekt verbinde ich Hardware, Firmware und Systemintegration und betreibe die Hausautomation selbst. Das Repository enthält KiCad-Projekte, Gehäuse für den 3D-Druck, Protokolldokumentation und Software. Hardware und Software lassen sich damit gemeinsam betrachten."],
+        ["Die Architekturentscheidung", "Die Komponenten kommunizieren über CAN. Ein ESP32-Gateway übersetzt zwischen CAN und MQTT und nutzt kabelgebundenes Ethernet. Die Rust-Firmware arbeitet ohne Standardbibliothek mit Embassy. Hardwareunabhängige Core-Crates sind von der ESP32-Anbindung getrennt; so lässt sich Logik auf dem Entwicklungsrechner testen."],
+        ["Testen und aktualisieren", "Das Repository dokumentiert OTA-Updates für Gateway und CAN-Knoten sowie eine QEMU-Simulation mit virtuellen CAN-Bussen. Dazu kommen Formatierung, Clippy, Tests mit Coverage und Abhängigkeitsprüfungen in CI. Die frühere C++/ESP-IDF-Implementierung bleibt als Referenz erhalten."],
+        ["Stand und Grenzen", "Das Projekt ist offen dokumentierte, experimentelle Hardware und Firmware. Es ist kein fertig zertifiziertes Installationsprodukt. Die README weist besonders bei Netzspannung auf die nötige Fachkenntnis hin; einzelne Hardware-Dokumentationen sind noch in Arbeit."],
+        ["Der Bezug zur Teamarbeit", "Hier wird sichtbar, warum Firmware, Schnittstellen, Tests und Updatefähigkeit zusammengehören. Für Teams mit Mikrocontrollern bietet das no_std-Training den passenden Einstieg; die Systemintegration verbindet diese Arbeit mit Anwendungen und Diensten auf Linux."]
+      ],
+      "status": "Eigenes, betriebenes Hausautomationsprojekt mit öffentlich zugänglicher Hardware und Firmware; experimentelle Komponenten."
+    },
+    "en": {
+      "title": "Home automation from circuit board to integration",
+      "summary": "An open home automation system with custom hardware, Rust firmware and a gateway between CAN and MQTT.",
+      "role": "My own home automation project: hardware, embedded software, system integration and operation.",
+      "diagram": [["CAN nodes", "Relays, buttons, sensors"], ["Gateway", "ESP32 / Rust / Embassy"], ["MQTT", "Over Ethernet"], ["Integration", "openHAB / Home Assistant"]],
+      "sections": [
+        ["The problem", "Relays, roller shutters, lights, buttons and sensors need to work together. That takes more than firmware on one board: it needs a shared protocol, a gateway and integration with home automation software. The system also needs to remain understandable and modifiable after installation."],
+        ["My contribution", "In this personal project I connect hardware, firmware and system integration, and operate the home automation system myself. The repository contains KiCad projects, 3D-printable enclosures, protocol documentation and software. Hardware and software can be considered together."],
+        ["The architecture decision", "Components communicate over CAN. An ESP32 gateway bridges CAN and MQTT using wired Ethernet. Rust firmware runs without the standard library, using Embassy. Hardware-independent core crates are separate from the ESP32 bindings, allowing logic to be tested on a development machine."],
+        ["Testing and updates", "The repository documents OTA updates for the gateway and CAN nodes, and a QEMU simulation with virtual CAN buses. CI covers formatting, Clippy, tests with coverage and dependency checks. The earlier C++/ESP-IDF implementation remains available as a reference."],
+        ["Status and limits", "This is openly documented, experimental hardware and firmware, rather than a finished, certified installation product. The README highlights the expertise required when working with mains voltage; documentation for some boards is still in progress."],
+        ["How this connects to team development", "This project shows why firmware, interfaces, testing and update capability belong together. The no_std training is relevant for microcontroller teams; system integration connects that work to Linux applications and services."]
+      ],
+      "status": "My own operating home automation project with public hardware and firmware; experimental components."
+    }
+  },
+  {
+    "key": "curvyo",
+    "name": "Curvyo",
+    "stack": "Rust · Tauri · WebAssembly · TypeScript",
+    "repo": "https://github.com/curvyo/curvyo",
+    "courses": ["managers"],
+    "de": {
+      "title": "Curvyo: Vektorwerkzeuge mit KI-Agenten entwickeln",
+      "summary": "Ein Vektorwerkzeug in früher Entwicklung. Mein Fokus liegt auf Produktrichtung, technischen Entscheidungen, Spezifikationen, Reviews und Tests der agentenentwickelten Software.",
+      "role": "Auftraggeber und technische Leitung; die Implementierung übernehmen KI-Agenten.",
+      "diagram": [["Spezifikation", "Ziel & Abnahmekriterien"], ["KI-Agenten", "Implementierung"], ["Review & Tests", "Prüfen und korrigieren"], ["Anwendung", "Rust / Tauri / WASM"]],
+      "sections": [
+        ["Die Idee", "Von der Vektorzeichnung zum Werkstück führt der Weg oft durch mehrere Programme. Curvyo soll Entwurf und Fertigung zusammenbringen: langfristig für Lasercutter, Plotter, Stickmaschinen und CNC-Fräsen. Das erste geplante Release konzentriert sich auf einen lokalen Laser-Workflow mit GRBL-G-Code."],
+        ["Meine Rolle", "Curvyo wird vollständig von KI-Agenten entwickelt. Ich bin Auftraggeber und technische Leitung: Ich gebe die Richtung vor, treffe technische Entscheidungen, formuliere Spezifikationen und prüfe die Ergebnisse durch Reviews, Tests und Fehlermeldungen. Die Verantwortung für die Entscheidungen bleibt damit bei mir."],
+        ["Die Architekturentscheidung", "Dokumentmodell, Geometrie und UI-Logik liegen in Rust-Crates. Tauri bindet die Desktop-Anwendung ein, WebAssembly die Browser-Oberfläche. Die Entwicklung ist spezifikationsgetrieben und wird durch CI-Prüfungen begleitet. Der Ansatz ist lokal und offline nutzbar; Desktop steht zuerst, Browser und mobile Begleiter folgen nachrangig."],
+        ["Was bereits funktioniert", "Die öffentliche README nennt das Erstellen, Öffnen und Speichern lokaler Projekte, Bézier-Pfade, geometrische Grundformen sowie Auswahl und Transformationen. Damit lässt sich bereits zeichnen und bearbeiten. Der genaue Funktionsstand ist im Repository und in der Spezifikationsübersicht nachvollziehbar."],
+        ["Was noch geplant ist", "Curvyo ist noch kein fertiger Fertigungsworkflow. Laut dokumentiertem Stand fehlen unter anderem SVG-Import und -Export, Maschinenprofile, Job-Vorschau und G-Code-Ausgabe. Plotter, Stickmaschinen und CNC sind spätere Ziele. Diese Unterscheidung zwischen Produktidee und vorhandenem Verhalten gehört für mich zur technischen Kommunikation dazu."],
+        ["Warum ich das Projekt zeige", "Das Projekt macht meine Arbeit an technischen Entscheidungen und prüfbaren Spezifikationen sichtbar. Es ist ein eigener Entwicklungsansatz und kein Beleg für eine allgemeine Produktivitätssteigerung durch KI. Im Manager-Workshop geht es ebenfalls darum, eine Technologie anhand von Nutzen, Grenzen und Aufwand einzuordnen."]
+      ],
+      "status": "Frühe Entwicklung: Zeichnen und Bearbeiten vorhanden; die Ausgabe von Maschinenjobs ist noch nicht umgesetzt."
+    },
+    "en": {
+      "title": "Curvyo: developing vector tools with AI agents",
+      "summary": "A vector tool in early development. My focus is product direction, technical decisions, specifications, reviews and testing of agent-developed software.",
+      "role": "Customer and technical lead; AI agents implement the software.",
+      "diagram": [["Specification", "Goals & acceptance criteria"], ["AI agents", "Implementation"], ["Review & tests", "Check and correct"], ["Application", "Rust / Tauri / WASM"]],
+      "sections": [
+        ["The idea", "Turning a vector drawing into a physical object often requires several applications. Curvyo aims to connect design and manufacturing: eventually for laser cutters, plotters, embroidery machines and CNC mills. The first planned release focuses on a local laser workflow with GRBL G-code."],
+        ["My role", "Curvyo is developed entirely by AI agents. I act as customer and technical lead: setting direction, making technical decisions, writing specifications and checking results through reviews, testing and bug reports. Responsibility for those decisions stays with me."],
+        ["The architecture decision", "The document model, geometry and UI logic live in Rust crates. Tauri hosts the desktop application, while WebAssembly connects the browser interface. Development is specification-driven and supported by CI checks. The approach is local-first and offline-capable: desktop comes first, with browser and mobile companions lower in priority."],
+        ["What works today", "The public README lists creating, opening and saving local projects, Bézier paths, geometric primitives, selection and transformations. Drawing and editing are already possible. The repository and specification index document the detailed feature status."],
+        ["What is still planned", "Curvyo is not yet a complete manufacturing workflow. The documented status lists SVG import and export, machine profiles, job preview and G-code output as missing. Plotters, embroidery and CNC are later goals. Distinguishing the product idea from current behaviour is part of clear technical communication."],
+        ["Why I show this project", "It makes my work on technical decisions and verifiable specifications visible. It is my own development approach, rather than evidence of a general productivity increase from AI. The managers workshop similarly examines a technology through its benefits, constraints and adoption effort."]
+      ],
+      "status": "Early development: drawing and editing are available; machine-job output is not implemented yet."
+    }
+  }
+]
