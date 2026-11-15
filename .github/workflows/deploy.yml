@@ -28,14 +28,33 @@ jobs:
           python3 tools/build_site.py
           python3 tools/check_site.py
           python3 tools/check_performance.py
+          python3 -m unittest discover -s tools -p 'test_indexnow.py'
           node tools/check_preferences.cjs
 
       - name: Prepare site
         run: |
           mkdir _site
-          cp ./*.html style.css theme.js robots.txt sitemap.xml avatar.jpg favicon.svg _site/
+          cp ./*.html style.css theme.js robots.txt sitemap.xml avatar.jpg favicon.svg indexnow-key.txt _site/
           cp -R assets de projects _site/
           touch _site/.nojekyll
+
+      - name: Restore last acknowledged IndexNow snapshot
+        id: indexnow_restore
+        uses: actions/cache/restore@v4
+        continue-on-error: true
+        with:
+          path: ${{ runner.temp }}/indexnow-state.json
+          key: indexnow-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: indexnow-
+
+      - name: Prepare changed URLs for IndexNow
+        id: indexnow_prepare
+        if: steps.indexnow_restore.outcome == 'success'
+        continue-on-error: true
+        run: >-
+          python3 tools/indexnow.py prepare --site _site
+          --state "${{ runner.temp }}/indexnow-state.json"
+          --payload "${{ runner.temp }}/indexnow-payload.json"
 
       - uses: actions/configure-pages@v5
 
@@ -45,3 +64,20 @@ jobs:
 
       - id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Notify IndexNow after successful deployment
+        id: indexnow_submit
+        if: steps.indexnow_prepare.outcome == 'success'
+        continue-on-error: true
+        run: >-
+          python3 tools/indexnow.py submit
+          --state "${{ runner.temp }}/indexnow-state.json"
+          --payload "${{ runner.temp }}/indexnow-payload.json"
+
+      - name: Save acknowledged IndexNow snapshot
+        if: steps.indexnow_submit.outcome == 'success'
+        uses: actions/cache/save@v4
+        continue-on-error: true
+        with:
+          path: ${{ runner.temp }}/indexnow-state.json
+          key: indexnow-${{ github.run_id }}-${{ github.run_attempt }}

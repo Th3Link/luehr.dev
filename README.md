@@ -12,6 +12,7 @@ Edit those sources, then regenerate the tracked HTML and sitemap:
 python3 tools/build_site.py
 python3 tools/check_site.py
 node tools/check_preferences.cjs
+python3 -m unittest discover -s tools -p 'test_indexnow.py'
 ```
 
 Python 3.10+ and Node.js 18+ are sufficient. No package installation is needed.
@@ -151,3 +152,45 @@ Other findings: the small baseline desktop layout shift was attributed to the he
 font. The 10-minute asset cache policy and render-blocking resources are additional
 PageSpeed diagnostics. They are not changed in this focused image-delivery fix; the
 page already meets the lab LCP and CLS thresholds comfortably.
+
+## Training comparison and project case studies
+
+Both training overview pages include a linked comparison of starting points, goals,
+formats and prices. Pricing comes from the same `facts()` renderer as the course pages.
+The home pages link to the comparison without replacing existing training anchors.
+
+`tools/projects.json` holds the three bilingual project case studies. Their descriptions
+were checked against the public project READMEs on 15 November 2026. Each page separates
+Marc's role, technical decisions and current status, links its sources and related
+training, and includes TechArticle metadata. Curvyo's planned machine output is explicitly
+distinguished from its current drawing/editing features. Regenerate all 22 pages with
+`python3 tools/build_site.py`; the deployment includes both `projects/` and `de/projekte/`.
+
+## IndexNow after deployment
+
+The Pages workflow prepares a content snapshot, deploys the site, then notifies
+`https://api.indexnow.org/indexnow` of new, changed and removed canonical URLs. Shared
+asset changes notify all current pages. The root `indexnow-key.txt` is an intentionally
+public ownership-verification file, not a login credential; it is included in the
+deployment artifact and checked on the live host before submission.
+
+Only an HTTP 200 or 202 acknowledgement advances the snapshot stored in GitHub Actions
+cache. A failed request preserves the preceding snapshot so pending changes are retried
+on the next deployment. No changes means no API request. If the cache is absent or evicted,
+all current sitemap URLs are submitted; older deleted URLs cannot be reconstructed then.
+Notification/cache failures do not undo or block a successful website deployment and
+are visible as failed, non-blocking workflow steps. HTTP 202 means key validation is
+pending; neither response guarantees indexing or ranking. See the
+[IndexNow protocol](https://www.indexnow.org/documentation).
+
+Offline verification (does not contact IndexNow):
+
+```sh
+python3 -m unittest discover -s tools -p 'test_indexnow.py'
+python3 tools/indexnow.py prepare --site /path/to/public-artifact \
+  --state /tmp/indexnow-state.json --payload /tmp/indexnow-payload.json
+```
+
+`submit` is intended for CI after a successful production deployment. It sends only
+public canonical URLs and the ownership-verification key. It does not read account
+credentials or configure Google Search Console. IndexNow is separate from Google indexing.
